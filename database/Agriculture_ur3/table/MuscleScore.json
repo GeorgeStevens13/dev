@@ -1,0 +1,136 @@
+{
+	"name": "MuscleScore",
+	"properties": {
+		"Name": "MuscleScore",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "MuscleScoreId",
+					"Description": "The unique identifier of a muscle score.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MuscleScore.cdm.json/MuscleScore",
+						"Name": "MuscleScoreId"
+					}
+				},
+				{
+					"Name": "MuscleScoreName",
+					"Description": "The name of a muscle score.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MuscleScore.cdm.json/MuscleScore",
+						"Name": "MuscleScoreName"
+					}
+				},
+				{
+					"Name": "MuscleScoreDescription",
+					"Description": "The description of a muscle score.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MuscleScore.cdm.json/MuscleScore",
+						"Name": "MuscleScoreDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "970c1989-e5e3-4d23-a963-2405500b13a2",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MuscleScore",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MuscleScore",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MuscleScoreId\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreId\"},\"MuscleScoreName\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreName\"},\"MuscleScoreDescription\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MuscleScore\",\"path\":\"MuscleScore.cdm.json/MuscleScore\"},\"description\":\"Describes the muscularity of cattle measured in a 15 point scale\\n\\nEx:\\nA: Very heavy\\nB: Heavy\\nC: Medium\\nD: Moderate\\nE: Light\",\"primaryKey\":[\"MuscleScoreId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a muscle score.\",\"isNullable\":false,\"name\":\"MuscleScoreId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a muscle score.\",\"isNullable\":true,\"name\":\"MuscleScoreName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MuscleScore.cdm.json/MuscleScore\",\"name\":\"MuscleScoreDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a muscle score.\",\"isNullable\":true,\"name\":\"MuscleScoreDescription\"}]}}}",
+			"Description": "Describes the muscularity of cattle measured in a 15 point scale\n\nEx:\nA: Very heavy\nB: Heavy\nC: Medium\nD: Moderate\nE: Light",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MuscleScoreId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"MuscleScoreId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MuscleScoreName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MuscleScoreDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "489822fe-24a8-47bb-9a03-7c356031b3a7",
+		"Description": "Describes the muscularity of cattle measured in a 15 point scale\n\nEx:\nA: Very heavy\nB: Heavy\nC: Medium\nD: Moderate\nE: Light"
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "Agriculture_ur3",
+	"properties": {
+		"Name": "Agriculture_ur3",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Agriculture\",\"Version\":\"0.1.0\"}}}",
+			"IsSyMSCDMDatabase": true,
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate"
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "gstevens-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "dadafd8d-a054-45b7-969d-e0213ab95b22"
+	},
+	"type": "DATABASE"
+}

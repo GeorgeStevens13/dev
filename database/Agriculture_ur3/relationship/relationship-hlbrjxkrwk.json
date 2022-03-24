@@ -1,0 +1,28 @@
+{
+	"name": "relationship-hlbrjxkrwk",
+	"properties": {
+		"Name": "relationship-hlbrjxkrwk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Herd",
+		"ToTableName": "HerdStockingRate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdId",
+				"ToColumnName": "HerdId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Herd.cdm.json/Herd\",\"toEntity\":\"HerdStockingRate.cdm.json/HerdStockingRate\",\"joinPairs\":[{\"fromAttribute\":\"HerdId\",\"toAttribute\":\"HerdId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "f42c251c-b3af-4d28-97e2-b540cb79065c"
+	},
+	"type": "RELATIONSHIP"
+}

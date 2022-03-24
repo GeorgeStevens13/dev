@@ -1,0 +1,28 @@
+{
+	"name": "relationship-pxolrdatks",
+	"properties": {
+		"Name": "relationship-pxolrdatks",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Animal",
+		"ToTableName": "RelatedAnimal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "AnimalId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Animal.cdm.json/Animal\",\"toEntity\":\"RelatedAnimal.cdm.json/RelatedAnimal\",\"joinPairs\":[{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"AnimalId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "19a3ece8-5f29-472b-af04-05f6ca9c5e02"
+	},
+	"type": "RELATIONSHIP"
+}

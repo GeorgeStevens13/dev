@@ -1,0 +1,155 @@
+{
+	"name": "FeedAdditiveType",
+	"properties": {
+		"Name": "FeedAdditiveType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "FeedAdditiveTypeId",
+					"Description": "The unique identifier of a feed additive type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveType.cdm.json/FeedAdditiveType",
+						"Name": "FeedAdditiveTypeId"
+					}
+				},
+				{
+					"Name": "FeedAdditiveTypeName",
+					"Description": "The name of a feed additive type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveType.cdm.json/FeedAdditiveType",
+						"Name": "FeedAdditiveTypeName"
+					}
+				},
+				{
+					"Name": "FeedAdditiveTypeDescription",
+					"Description": "The description of a feed additive type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveType.cdm.json/FeedAdditiveType",
+						"Name": "FeedAdditiveTypeDescription"
+					}
+				},
+				{
+					"Name": "FeedAdditiveCategoryId",
+					"Description": "The unique identifier of a feed additive category.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveType.cdm.json/FeedAdditiveType",
+						"Name": "FeedAdditiveCategoryId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "6b87ba6a-cd3d-4671-99d5-9421c5061f6c",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/FeedAdditiveType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/FeedAdditiveType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FeedAdditiveTypeId\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeId\"},\"FeedAdditiveTypeName\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeName\"},\"FeedAdditiveTypeDescription\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeDescription\"},\"FeedAdditiveCategoryId\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FeedAdditiveType\",\"path\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\"},\"description\":\"A type of additive added to stock feed.\\n\\nEx:\\n- Surfactant\\n- Corn condenses distillers soluble (CCDS)\\n- Corn syrup\\n- Melengestrol Acetate (MGA)\\n- Trenbolone Acetate (TBA)\\n- Bovine growth hormone\\n- Concentrate\",\"primaryKey\":[\"FeedAdditiveTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feed additive type.\",\"isNullable\":false,\"name\":\"FeedAdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a feed additive type.\",\"isNullable\":true,\"name\":\"FeedAdditiveTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a feed additive type.\",\"isNullable\":true,\"name\":\"FeedAdditiveTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"name\":\"FeedAdditiveCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feed additive category.\",\"isNullable\":true,\"name\":\"FeedAdditiveCategoryId\"}]}}}",
+			"Description": "A type of additive added to stock feed.\n\nEx:\n- Surfactant\n- Corn condenses distillers soluble (CCDS)\n- Corn syrup\n- Melengestrol Acetate (MGA)\n- Trenbolone Acetate (TBA)\n- Bovine growth hormone\n- Concentrate",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FeedAdditiveTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"FeedAdditiveTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FeedAdditiveTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FeedAdditiveTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FeedAdditiveCategoryId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "1b5468c8-473d-46b3-bf69-3f8973cc03cd",
+		"Description": "A type of additive added to stock feed.\n\nEx:\n- Surfactant\n- Corn condenses distillers soluble (CCDS)\n- Corn syrup\n- Melengestrol Acetate (MGA)\n- Trenbolone Acetate (TBA)\n- Bovine growth hormone\n- Concentrate"
+	},
+	"type": "TABLE"
+}

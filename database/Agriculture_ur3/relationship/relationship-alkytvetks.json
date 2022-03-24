@@ -1,0 +1,28 @@
+{
+	"name": "relationship-alkytvetks",
+	"properties": {
+		"Name": "relationship-alkytvetks",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Animal",
+		"ToTableName": "AnimalEating",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "AnimalId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Animal.cdm.json/Animal\",\"toEntity\":\"AnimalEating.cdm.json/AnimalEating\",\"joinPairs\":[{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"AnimalId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "51ebf947-30c3-477e-aa2d-d90f959ad433"
+	},
+	"type": "RELATIONSHIP"
+}

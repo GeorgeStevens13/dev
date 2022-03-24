@@ -1,0 +1,176 @@
+{
+	"name": "AverageDailyGain",
+	"properties": {
+		"Name": "AverageDailyGain",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AverageDailyGain.cdm.json/AverageDailyGain",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AverageDailyGain.cdm.json/AverageDailyGain",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AverageDailyGain.cdm.json/AverageDailyGain",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "AverageDailyGainPounds",
+					"Description": "The amount of gain divided by the number of days in the feeding period.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AverageDailyGain.cdm.json/AverageDailyGain",
+						"Name": "AverageDailyGainPounds"
+					}
+				},
+				{
+					"Name": "AverageDailyGainNote",
+					"Description": "A note, comment or additional information regarding the average daily gain.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AverageDailyGain.cdm.json/AverageDailyGain",
+						"Name": "AverageDailyGainNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "610261a2-c980-40c2-b952-36e32d63aa5a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AverageDailyGain",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AverageDailyGain",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AnimalId\"},\"PeriodStartTimestamp\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"PeriodEndTimestamp\"},\"AverageDailyGainPounds\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AverageDailyGainPounds\"},\"AverageDailyGainNote\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AverageDailyGainNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AverageDailyGain\",\"path\":\"AverageDailyGain.cdm.json/AverageDailyGain\"},\"description\":\"The amount of gain divided by the number of days in the feeding period.\",\"primaryKey\":[\"AnimalId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AverageDailyGainPounds\"},\"dataType\":\"integer\",\"description\":\"The amount of gain divided by the number of days in the feeding period.\",\"isNullable\":true,\"name\":\"AverageDailyGainPounds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AverageDailyGain.cdm.json/AverageDailyGain\",\"name\":\"AverageDailyGainNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the average daily gain.\",\"isNullable\":true,\"name\":\"AverageDailyGainNote\"}]}}}",
+			"Description": "The amount of gain divided by the number of days in the feeding period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AverageDailyGainPounds\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AverageDailyGainNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "a972666d-12a0-4389-9e5e-176a6df19602",
+		"Description": "The amount of gain divided by the number of days in the feeding period."
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "relationship-xsjsrthuqe",
+	"properties": {
+		"Name": "relationship-xsjsrthuqe",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Herd",
+		"ToTableName": "HerdLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdId",
+				"ToColumnName": "HerdId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Herd.cdm.json/Herd\",\"toEntity\":\"HerdLocation.cdm.json/HerdLocation\",\"joinPairs\":[{\"fromAttribute\":\"HerdId\",\"toAttribute\":\"HerdId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "65430a5d-b65f-4f11-a2a7-7468aee3ad2b"
+	},
+	"type": "RELATIONSHIP"
+}

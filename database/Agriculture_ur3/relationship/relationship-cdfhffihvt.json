@@ -1,0 +1,28 @@
+{
+	"name": "relationship-cdfhffihvt",
+	"properties": {
+		"Name": "relationship-cdfhffihvt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalFertilityCycleType",
+		"ToTableName": "AnimalFertilityCycle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalFertilityCycleTypeId",
+				"ToColumnName": "AnimalFertilityCycleTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"toEntity\":\"AnimalFertilityCycle.cdm.json/AnimalFertilityCycle\",\"joinPairs\":[{\"fromAttribute\":\"AnimalFertilityCycleTypeId\",\"toAttribute\":\"AnimalFertilityCycleTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "27b4a9da-c0e4-4c7a-9b23-26be87fa65eb"
+	},
+	"type": "RELATIONSHIP"
+}

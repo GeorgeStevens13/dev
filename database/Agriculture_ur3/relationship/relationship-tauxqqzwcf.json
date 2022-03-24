@@ -1,0 +1,28 @@
+{
+	"name": "relationship-tauxqqzwcf",
+	"properties": {
+		"Name": "relationship-tauxqqzwcf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CattleType",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CattleTypeId",
+				"ToColumnName": "CattleTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CattleType.cdm.json/CattleType\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"CattleTypeId\",\"toAttribute\":\"CattleTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "9e8065f4-fc85-48b7-9630-20034f82ed08"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,214 @@
+{
+	"name": "AnimalEventRelatedParty",
+	"properties": {
+		"Name": "AnimalEventRelatedParty",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "PartyId"
+					}
+				},
+				{
+					"Name": "AnimalEventTypeId",
+					"Description": "The unique identifier of an animal event type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "AnimalEventTypeId"
+					}
+				},
+				{
+					"Name": "AnimalEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of an animal event party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "AnimalEventPartyRelationshipTypeId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "AnimalEventRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the animal event related party.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty",
+						"Name": "AnimalEventRelatedPartyNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "d15d7a60-6193-4dc5-8c21-f7ae1580f293",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventRelatedParty",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalId\"},\"PartyId\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PartyId\"},\"AnimalEventTypeId\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventTypeId\"},\"AnimalEventPartyRelationshipTypeId\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"AnimalEventRelatedPartyNote\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalEventRelatedParty\",\"path\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\"},\"description\":\"Party(s) related to the animal event.\",\"primaryKey\":[\"AnimalId\",\"PartyId\",\"AnimalEventTypeId\",\"AnimalEventPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal event type.\",\"isNullable\":false,\"name\":\"AnimalEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal event party relationship type.\",\"isNullable\":false,\"name\":\"AnimalEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"name\":\"AnimalEventRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal event related party.\",\"isNullable\":true,\"name\":\"AnimalEventRelatedPartyNote\"}]}}}",
+			"Description": "Party(s) related to the animal event.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,PartyId,AnimalEventTypeId,AnimalEventPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PartyId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalEventTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalEventPartyRelationshipTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalEventRelatedPartyNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "9ecc88e3-6c4b-4083-84f0-88f4a26bfb75",
+		"Description": "Party(s) related to the animal event."
+	},
+	"type": "TABLE"
+}

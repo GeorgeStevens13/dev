@@ -1,0 +1,28 @@
+{
+	"name": "relationship-ieitqkivzh",
+	"properties": {
+		"Name": "relationship-ieitqkivzh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Animal",
+		"ToTableName": "AnimalFeedAdditive",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "AnimalId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Animal.cdm.json/Animal\",\"toEntity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"joinPairs\":[{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"AnimalId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "0eb26c31-899e-4bfd-bad0-fd853c6bab7b"
+	},
+	"type": "RELATIONSHIP"
+}

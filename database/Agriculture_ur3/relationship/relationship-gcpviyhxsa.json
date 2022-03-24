@@ -1,0 +1,28 @@
+{
+	"name": "relationship-gcpviyhxsa",
+	"properties": {
+		"Name": "relationship-gcpviyhxsa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Herd",
+		"ToTableName": "HerdFeedAdditive",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdId",
+				"ToColumnName": "HerdId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Herd.cdm.json/Herd\",\"toEntity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"joinPairs\":[{\"fromAttribute\":\"HerdId\",\"toAttribute\":\"HerdId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "a3850b30-d279-4ab6-ae4f-0fb81d92772c"
+	},
+	"type": "RELATIONSHIP"
+}

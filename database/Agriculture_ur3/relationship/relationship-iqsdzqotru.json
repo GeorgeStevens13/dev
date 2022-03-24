@@ -1,0 +1,28 @@
+{
+	"name": "relationship-iqsdzqotru",
+	"properties": {
+		"Name": "relationship-iqsdzqotru",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Herd",
+		"ToTableName": "HerdCalvingSeason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdId",
+				"ToColumnName": "HerdId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Herd.cdm.json/Herd\",\"toEntity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"joinPairs\":[{\"fromAttribute\":\"HerdId\",\"toAttribute\":\"HerdId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "d97e98dd-f6f5-4092-a5d5-3d6e50f9be25"
+	},
+	"type": "RELATIONSHIP"
+}

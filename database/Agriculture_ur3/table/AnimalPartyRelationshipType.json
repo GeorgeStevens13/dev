@@ -1,0 +1,136 @@
+{
+	"name": "AnimalPartyRelationshipType",
+	"properties": {
+		"Name": "AnimalPartyRelationshipType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalPartyRelationshipTypeId",
+					"Description": "The unique identifier of an animal-party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType",
+						"Name": "AnimalPartyRelationshipTypeId"
+					}
+				},
+				{
+					"Name": "AnimalPartyRelationshipTypeName",
+					"Description": "The name of an animal-party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType",
+						"Name": "AnimalPartyRelationshipTypeName"
+					}
+				},
+				{
+					"Name": "AnimalPartyRelationshipTypeDescription",
+					"Description": "The description of an animal-party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType",
+						"Name": "AnimalPartyRelationshipTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "fac73432-04a9-4322-845f-11b94aa49de1",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalPartyRelationshipType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalPartyRelationshipTypeId\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeId\"},\"AnimalPartyRelationshipTypeName\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeName\"},\"AnimalPartyRelationshipTypeDescription\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalPartyRelationshipType\",\"path\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\"},\"description\":\"The nature of the animal - party relationship type.\\n\\nEx:\\n- Purchased-by party\\n- Sold-to party\\n- Leased-to party\\n- Slaughtered-by party\\n\\nConsulting Nutritionist, Private: Private nutritionist hired by the feedlot to give professional opinions on rations, supplements, feed additives and management practices. Usually paid on a retainer plus a per-head fee. Also see Consulting Nutritionist, Feed Company.\\n\\nConsulting Veterinarian: Veterinarian hired by the feedlot to consult on animal health-related issues such as vaccines and treatments. Usually paid on a retainer plus a per-head fee.\\n\\nAgent: Sells and buys cattle on behalf of clients.\\n\\nGrazier:  A farmer which raises livestock such as sheep or cattle.  Also known as a producer or pastoralist.\\n\\nLive exporter: A buyer who is looking to source stock bound for a live boat order.\",\"primaryKey\":[\"AnimalPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal-party relationship type.\",\"isNullable\":false,\"name\":\"AnimalPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal-party relationship type.\",\"isNullable\":true,\"name\":\"AnimalPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPartyRelationshipType.cdm.json/AnimalPartyRelationshipType\",\"name\":\"AnimalPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal-party relationship type.\",\"isNullable\":true,\"name\":\"AnimalPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the animal - party relationship type.\n\nEx:\n- Purchased-by party\n- Sold-to party\n- Leased-to party\n- Slaughtered-by party\n\nConsulting Nutritionist, Private: Private nutritionist hired by the feedlot to give professional opinions on rations, supplements, feed additives and management practices. Usually paid on a retainer plus a per-head fee. Also see Consulting Nutritionist, Feed Company.\n\nConsulting Veterinarian: Veterinarian hired by the feedlot to consult on animal health-related issues such as vaccines and treatments. Usually paid on a retainer plus a per-head fee.\n\nAgent: Sells and buys cattle on behalf of clients.\n\nGrazier:  A farmer which raises livestock such as sheep or cattle.  Also known as a producer or pastoralist.\n\nLive exporter: A buyer who is looking to source stock bound for a live boat order.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalPartyRelationshipTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalPartyRelationshipTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalPartyRelationshipTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "c7c38db5-25f7-47d4-874f-a0100ae3627b",
+		"Description": "The nature of the animal - party relationship type.\n\nEx:\n- Purchased-by party\n- Sold-to party\n- Leased-to party\n- Slaughtered-by party\n\nConsulting Nutritionist, Private: Private nutritionist hired by the feedlot to give professional opinions on rations, supplements, feed additives and management practices. Usually paid on a retainer plus a per-head fee. Also see Consulting Nutritionist, Feed Company.\n\nConsulting Veterinarian: Veterinarian hired by the feedlot to consult on animal health-related issues such as vaccines and treatments. Usually paid on a retainer plus a per-head fee.\n\nAgent: Sells and buys cattle on behalf of clients.\n\nGrazier:  A farmer which raises livestock such as sheep or cattle.  Also known as a producer or pastoralist.\n\nLive exporter: A buyer who is looking to source stock bound for a live boat order."
+	},
+	"type": "TABLE"
+}

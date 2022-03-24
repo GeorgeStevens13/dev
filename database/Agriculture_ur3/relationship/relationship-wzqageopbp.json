@@ -1,0 +1,28 @@
+{
+	"name": "relationship-wzqageopbp",
+	"properties": {
+		"Name": "relationship-wzqageopbp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CattleBreed",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CattleBreedId",
+				"ToColumnName": "CattleBreedId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CattleBreed.cdm.json/CattleBreed\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"CattleBreedId\",\"toAttribute\":\"CattleBreedId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "db1a45bc-1cf6-411d-82f1-7afa80f2676a"
+	},
+	"type": "RELATIONSHIP"
+}

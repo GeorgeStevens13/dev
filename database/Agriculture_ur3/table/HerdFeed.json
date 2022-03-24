@@ -1,0 +1,271 @@
+{
+	"name": "HerdFeed",
+	"properties": {
+		"Name": "HerdFeed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "HerdId",
+					"Description": "The unique identifier of a herd.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "HerdId"
+					}
+				},
+				{
+					"Name": "AnimalFeedTypeId",
+					"Description": "The unique identifier of an animal feed type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "AnimalFeedTypeId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "SplitSexFeedingIndicator",
+					"Description": "A feeding and housing program that divides animals by gender and formulates diets to meet the specific nutrient requirements of each sex more precisely.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "SplitSexFeedingIndicator"
+					}
+				},
+				{
+					"Name": "FeedQuantityUnits",
+					"Description": "The quantity of feed type provided to the herd.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "FeedQuantityUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "UnitOfMeasureId"
+					}
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "GeographicAreaId"
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "LocationId"
+					}
+				},
+				{
+					"Name": "AnimalHerdFeedNote",
+					"Description": "A note, comment or additional information regarding the animal herd feed.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeed.cdm.json/HerdFeed",
+						"Name": "AnimalHerdFeedNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "ec6b1e1a-348d-4cd6-9bbf-d76cd2f674d8",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdFeed",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdFeed",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HerdId\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"HerdId\"},\"AnimalFeedTypeId\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"AnimalFeedTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"PeriodEndTimestamp\"},\"SplitSexFeedingIndicator\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"SplitSexFeedingIndicator\"},\"FeedQuantityUnits\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"FeedQuantityUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"UnitOfMeasureId\"},\"GeographicAreaId\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"GeographicAreaId\"},\"LocationId\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"LocationId\"},\"AnimalHerdFeedNote\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"AnimalHerdFeedNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HerdFeed\",\"path\":\"HerdFeed.cdm.json/HerdFeed\"},\"description\":\"Feed given to the herd at the associated geographic area during the associated period.\",\"primaryKey\":[\"HerdId\",\"AnimalFeedTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"HerdId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a herd.\",\"isNullable\":false,\"name\":\"HerdId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"AnimalFeedTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal feed type.\",\"isNullable\":false,\"name\":\"AnimalFeedTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"SplitSexFeedingIndicator\"},\"dataType\":\"boolean\",\"description\":\"A feeding and housing program that divides animals by gender and formulates diets to meet the specific nutrient requirements of each sex more precisely.\",\"isNullable\":true,\"name\":\"SplitSexFeedingIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"FeedQuantityUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of feed type provided to the herd.\",\"isNullable\":true,\"name\":\"FeedQuantityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeed.cdm.json/HerdFeed\",\"name\":\"AnimalHerdFeedNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal herd feed.\",\"isNullable\":true,\"name\":\"AnimalHerdFeedNote\"}]}}}",
+			"Description": "Feed given to the herd at the associated geographic area during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "HerdId,AnimalFeedTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"HerdId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalFeedTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SplitSexFeedingIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FeedQuantityUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"GeographicAreaId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"LocationId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalHerdFeedNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "94267ee8-3ca9-4e45-ad60-cfb2ca97fec2",
+		"Description": "Feed given to the herd at the associated geographic area during the associated period."
+	},
+	"type": "TABLE"
+}

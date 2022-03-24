@@ -1,0 +1,28 @@
+{
+	"name": "relationship-fqjdbexyml",
+	"properties": {
+		"Name": "relationship-fqjdbexyml",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Animal",
+		"ToTableName": "AnimalSteps",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "AnimalId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Animal.cdm.json/Animal\",\"toEntity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"joinPairs\":[{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"AnimalId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "502cb668-669b-4f0c-9a0b-877824d54222"
+	},
+	"type": "RELATIONSHIP"
+}

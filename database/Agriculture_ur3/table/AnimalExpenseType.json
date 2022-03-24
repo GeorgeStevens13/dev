@@ -1,0 +1,136 @@
+{
+	"name": "AnimalExpenseType",
+	"properties": {
+		"Name": "AnimalExpenseType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalExpenseTypeId",
+					"Description": "The unique identifier of an animal expense type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalExpenseType.cdm.json/AnimalExpenseType",
+						"Name": "AnimalExpenseTypeId"
+					}
+				},
+				{
+					"Name": "AnimalExpenseTypeName",
+					"Description": "The name of an animal expense type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalExpenseType.cdm.json/AnimalExpenseType",
+						"Name": "AnimalExpenseTypeName"
+					}
+				},
+				{
+					"Name": "AnimalExpenseTypeDescription",
+					"Description": "The description of an animal expense type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalExpenseType.cdm.json/AnimalExpenseType",
+						"Name": "AnimalExpenseTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "d764a19b-3c79-4fd6-8fd8-f0efb8d30dd1",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalExpenseType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalExpenseType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalExpenseTypeId\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeId\"},\"AnimalExpenseTypeName\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeName\"},\"AnimalExpenseTypeDescription\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalExpenseType\",\"path\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\"},\"description\":\"A type of expense related to animal feeding, maintenance or welfare.\\n\\nEx:\\n- Chute charge\\n- Veterinarian\\n\\nwhere:\\n\\nChute Charges: Fee charged by some feedlots each time cattle are worked through the chute.\",\"primaryKey\":[\"AnimalExpenseTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal expense type.\",\"isNullable\":false,\"name\":\"AnimalExpenseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal expense type.\",\"isNullable\":true,\"name\":\"AnimalExpenseTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"name\":\"AnimalExpenseTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal expense type.\",\"isNullable\":true,\"name\":\"AnimalExpenseTypeDescription\"}]}}}",
+			"Description": "A type of expense related to animal feeding, maintenance or welfare.\n\nEx:\n- Chute charge\n- Veterinarian\n\nwhere:\n\nChute Charges: Fee charged by some feedlots each time cattle are worked through the chute.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalExpenseTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalExpenseTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalExpenseTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalExpenseTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "66c29968-6592-4158-981f-7aa9ca908775",
+		"Description": "A type of expense related to animal feeding, maintenance or welfare.\n\nEx:\n- Chute charge\n- Veterinarian\n\nwhere:\n\nChute Charges: Fee charged by some feedlots each time cattle are worked through the chute."
+	},
+	"type": "TABLE"
+}

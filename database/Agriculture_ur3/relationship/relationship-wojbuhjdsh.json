@@ -1,0 +1,28 @@
+{
+	"name": "relationship-wojbuhjdsh",
+	"properties": {
+		"Name": "relationship-wojbuhjdsh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalExpenseType",
+		"ToTableName": "HerdExpense",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalExpenseTypeId",
+				"ToColumnName": "AnimalExpenseTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"toEntity\":\"HerdExpense.cdm.json/HerdExpense\",\"joinPairs\":[{\"fromAttribute\":\"AnimalExpenseTypeId\",\"toAttribute\":\"AnimalExpenseTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "ac71070b-40c8-4b3f-a918-464d3cf88756"
+	},
+	"type": "RELATIONSHIP"
+}

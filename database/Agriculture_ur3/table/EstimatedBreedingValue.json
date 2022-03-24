@@ -1,0 +1,136 @@
+{
+	"name": "EstimatedBreedingValue",
+	"properties": {
+		"Name": "EstimatedBreedingValue",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "EstimatedBreedingValueId",
+					"Description": "The unique identifier of an estimated breeding value.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "EstimatedBreedingValue.cdm.json/EstimatedBreedingValue",
+						"Name": "EstimatedBreedingValueId"
+					}
+				},
+				{
+					"Name": "EstimatedBreedingValueName",
+					"Description": "The name of an estimated breeding value.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "EstimatedBreedingValue.cdm.json/EstimatedBreedingValue",
+						"Name": "EstimatedBreedingValueName"
+					}
+				},
+				{
+					"Name": "EstimatedBreedingValueDescription",
+					"Description": "The description of an estimated breeding value.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "EstimatedBreedingValue.cdm.json/EstimatedBreedingValue",
+						"Name": "EstimatedBreedingValueDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "ac3af5ef-49aa-4c99-92ec-8a2ea4a1d46a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/EstimatedBreedingValue",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/EstimatedBreedingValue",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EstimatedBreedingValueId\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueId\"},\"EstimatedBreedingValueName\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueName\"},\"EstimatedBreedingValueDescription\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EstimatedBreedingValue\",\"path\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\"},\"description\":\"An estimate of an individual's true breeding value for a trait based on the performance of the individual and close relatives for the trait.\\n\\nEBV is a systematic way of combining available performance information on the individual brothers and sisters and the progeny of the individual.\\n\\nBreeding values are calculated using information which is collected by farmers, on-farm. \\n\\nEx:\\n- Herd Testing data\\n- Weighing data\\n- Body Condition Scores \\n- 'Traits other than production' scores\",\"primaryKey\":[\"EstimatedBreedingValueId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an estimated breeding value.\",\"isNullable\":false,\"name\":\"EstimatedBreedingValueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an estimated breeding value.\",\"isNullable\":true,\"name\":\"EstimatedBreedingValueName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"name\":\"EstimatedBreedingValueDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an estimated breeding value.\",\"isNullable\":true,\"name\":\"EstimatedBreedingValueDescription\"}]}}}",
+			"Description": "An estimate of an individual's true breeding value for a trait based on the performance of the individual and close relatives for the trait.\n\nEBV is a systematic way of combining available performance information on the individual brothers and sisters and the progeny of the individual.\n\nBreeding values are calculated using information which is collected by farmers, on-farm. \n\nEx:\n- Herd Testing data\n- Weighing data\n- Body Condition Scores \n- 'Traits other than production' scores",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EstimatedBreedingValueId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"EstimatedBreedingValueId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"EstimatedBreedingValueName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"EstimatedBreedingValueDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "9391c404-1871-430c-8882-38c71e82f270",
+		"Description": "An estimate of an individual's true breeding value for a trait based on the performance of the individual and close relatives for the trait.\n\nEBV is a systematic way of combining available performance information on the individual brothers and sisters and the progeny of the individual.\n\nBreeding values are calculated using information which is collected by farmers, on-farm. \n\nEx:\n- Herd Testing data\n- Weighing data\n- Body Condition Scores \n- 'Traits other than production' scores"
+	},
+	"type": "TABLE"
+}

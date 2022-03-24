@@ -1,0 +1,136 @@
+{
+	"name": "AnimalEncounter",
+	"properties": {
+		"Name": "AnimalEncounter",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEncounter.cdm.json/AnimalEncounter",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEncounter.cdm.json/AnimalEncounter",
+						"Name": "EncounterId"
+					}
+				},
+				{
+					"Name": "EncounterChargeAmount",
+					"Description": "The charge associated with the encounter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEncounter.cdm.json/AnimalEncounter",
+						"Name": "EncounterChargeAmount"
+					}
+				}
+			],
+			"ColumnSetEntityName": "a65a7f6f-aff9-488e-bcf9-9fb1542e2df0",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEncounter",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEncounter",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"AnimalId\"},\"EncounterId\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"EncounterId\"},\"EncounterChargeAmount\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"EncounterChargeAmount\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalEncounter\",\"path\":\"AnimalEncounter.cdm.json/AnimalEncounter\"},\"description\":\"A medical encounter with an animal.\",\"primaryKey\":[\"AnimalId\",\"EncounterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEncounter.cdm.json/AnimalEncounter\",\"name\":\"EncounterChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The charge associated with the encounter.\",\"isNullable\":true,\"scale\":2,\"name\":\"EncounterChargeAmount\"}]}}}",
+			"Description": "A medical encounter with an animal.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,EncounterId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"EncounterId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"EncounterChargeAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "8511c62f-e85e-4498-97ae-ef2bb884487b",
+		"Description": "A medical encounter with an animal."
+	},
+	"type": "TABLE"
+}

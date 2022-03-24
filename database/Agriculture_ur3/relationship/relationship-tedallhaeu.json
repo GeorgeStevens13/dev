@@ -1,0 +1,28 @@
+{
+	"name": "relationship-tedallhaeu",
+	"properties": {
+		"Name": "relationship-tedallhaeu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Herd",
+		"ToTableName": "HerdAnimal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdId",
+				"ToColumnName": "HerdId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Herd.cdm.json/Herd\",\"toEntity\":\"HerdAnimal.cdm.json/HerdAnimal\",\"joinPairs\":[{\"fromAttribute\":\"HerdId\",\"toAttribute\":\"HerdId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "b06b8469-8f72-4bfa-ba2d-6f32cdace36f"
+	},
+	"type": "RELATIONSHIP"
+}

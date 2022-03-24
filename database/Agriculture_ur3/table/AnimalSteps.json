@@ -1,0 +1,195 @@
+{
+	"name": "AnimalSteps",
+	"properties": {
+		"Name": "AnimalSteps",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "NumberOfSteps",
+					"Description": "The number of steps taken by the animal during the given period.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "NumberOfSteps"
+					}
+				},
+				{
+					"Name": "SensorId",
+					"Description": "The unique identifier of a sensor.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "SensorId"
+					}
+				},
+				{
+					"Name": "AnimalStepsNote",
+					"Description": "A note, comment or additional information regarding the animal step count.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalSteps.cdm.json/AnimalSteps",
+						"Name": "AnimalStepsNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "c2d94876-9c03-4d1a-a28a-51fc63aa612f",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalSteps",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalSteps",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"AnimalId\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"PeriodEndTimestamp\"},\"NumberOfSteps\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"NumberOfSteps\"},\"SensorId\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"SensorId\"},\"AnimalStepsNote\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"AnimalStepsNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalSteps\",\"path\":\"AnimalSteps.cdm.json/AnimalSteps\"},\"description\":\"The number of steps that the animal takes during the associated period.\",\"primaryKey\":[\"AnimalId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"NumberOfSteps\"},\"dataType\":\"integer\",\"description\":\"The number of steps taken by the animal during the given period.\",\"isNullable\":true,\"name\":\"NumberOfSteps\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"SensorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a sensor.\",\"isNullable\":true,\"name\":\"SensorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalSteps.cdm.json/AnimalSteps\",\"name\":\"AnimalStepsNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal step count.\",\"isNullable\":true,\"name\":\"AnimalStepsNote\"}]}}}",
+			"Description": "The number of steps that the animal takes during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NumberOfSteps\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SensorId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalStepsNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "e8a01c93-5a19-4854-9910-7b2133ef0c80",
+		"Description": "The number of steps that the animal takes during the associated period."
+	},
+	"type": "TABLE"
+}

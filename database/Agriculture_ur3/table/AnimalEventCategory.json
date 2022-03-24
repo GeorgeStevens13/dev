@@ -1,0 +1,136 @@
+{
+	"name": "AnimalEventCategory",
+	"properties": {
+		"Name": "AnimalEventCategory",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalEventCategoryId",
+					"Description": "The unique identifier of an animal event category.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventCategory.cdm.json/AnimalEventCategory",
+						"Name": "AnimalEventCategoryId"
+					}
+				},
+				{
+					"Name": "AnimalEventCategoryName",
+					"Description": "The name  of an animal event category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventCategory.cdm.json/AnimalEventCategory",
+						"Name": "AnimalEventCategoryName"
+					}
+				},
+				{
+					"Name": "AnimalEventCategoryDescription",
+					"Description": "The description of an animal event category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventCategory.cdm.json/AnimalEventCategory",
+						"Name": "AnimalEventCategoryDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "5caa2e28-2777-425d-8f28-1b11fc5a4cbb",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventCategory",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventCategory",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalEventCategoryId\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryId\"},\"AnimalEventCategoryName\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryName\"},\"AnimalEventCategoryDescription\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalEventCategory\",\"path\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\"},\"description\":\"A category of animal events.\\n\\nEx:\\n- Breeding\\n- Illness\\n- Inoculation\\n- Slaughter\\n- Processing\\n- Milk Production\",\"primaryKey\":[\"AnimalEventCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal event category.\",\"isNullable\":false,\"name\":\"AnimalEventCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name  of an animal event category.\",\"isNullable\":true,\"name\":\"AnimalEventCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"name\":\"AnimalEventCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal event category.\",\"isNullable\":true,\"name\":\"AnimalEventCategoryDescription\"}]}}}",
+			"Description": "A category of animal events.\n\nEx:\n- Breeding\n- Illness\n- Inoculation\n- Slaughter\n- Processing\n- Milk Production",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalEventCategoryId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalEventCategoryId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalEventCategoryName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalEventCategoryDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "8f219494-97c4-47c3-8273-6abe59c73049",
+		"Description": "A category of animal events.\n\nEx:\n- Breeding\n- Illness\n- Inoculation\n- Slaughter\n- Processing\n- Milk Production"
+	},
+	"type": "TABLE"
+}

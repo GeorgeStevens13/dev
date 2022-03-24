@@ -1,0 +1,136 @@
+{
+	"name": "CattleType",
+	"properties": {
+		"Name": "CattleType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "CattleTypeId",
+					"Description": "The unique identifier of a cattle type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleType.cdm.json/CattleType",
+						"Name": "CattleTypeId"
+					}
+				},
+				{
+					"Name": "CattleTypeName",
+					"Description": "The name of a cattle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleType.cdm.json/CattleType",
+						"Name": "CattleTypeName"
+					}
+				},
+				{
+					"Name": "CattleTypeDescription",
+					"Description": "The description of a cattle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleType.cdm.json/CattleType",
+						"Name": "CattleTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "540ce23c-f79e-47a4-8423-060d777dc1c1",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CattleType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CattleType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CattleTypeId\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeId\"},\"CattleTypeName\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeName\"},\"CattleTypeDescription\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CattleType\",\"path\":\"CattleType.cdm.json/CattleType\"},\"description\":\"Beef cattle eat a combination of grasses and grains, with more of an emphasis on grass, especially when they're young.   \\n\\nBeef cows produce milk, but only enough to feed their calves.\\n\\nDairy cows are thin and lean with a more angular shape. \\n\\nTheir energy goes into producing milk rather than building muscle and storing fat.\\n\\nDairy cows have large, pronounced udders and can make 8 to 10 gallons of milk per day. They get milked two to three times a day to keep them comfortable and healthy. They are fed a balanced diet consisting largely of grains and grasses.\\n\\nCows can only produce milk when they have calves, and both dairy and beef cattle are bred to have one calf per year. They are milked for about 300 days out of the year and then take a break or rest for two months when they get ready to calve. Since dairy bulls can't produce milk, they're sometimes used in beef production, too.\",\"primaryKey\":[\"CattleTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cattle type.\",\"isNullable\":false,\"name\":\"CattleTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a cattle type.\",\"isNullable\":true,\"name\":\"CattleTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleType.cdm.json/CattleType\",\"name\":\"CattleTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a cattle type.\",\"isNullable\":true,\"name\":\"CattleTypeDescription\"}]}}}",
+			"Description": "Beef cattle eat a combination of grasses and grains, with more of an emphasis on grass, especially when they're young.   \n\nBeef cows produce milk, but only enough to feed their calves.\n\nDairy cows are thin and lean with a more angular shape. \n\nTheir energy goes into producing milk rather than building muscle and storing fat.\n\nDairy cows have large, pronounced udders and can make 8 to 10 gallons of milk per day. They get milked two to three times a day to keep them comfortable and healthy. They are fed a balanced diet consisting largely of grains and grasses.\n\nCows can only produce milk when they have calves, and both dairy and beef cattle are bred to have one calf per year. They are milked for about 300 days out of the year and then take a break or rest for two months when they get ready to calve. Since dairy bulls can't produce milk, they're sometimes used in beef production, too.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "CattleTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"CattleTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CattleTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CattleTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "fceca636-549e-4e59-b38c-912ec5d80b33",
+		"Description": "Beef cattle eat a combination of grasses and grains, with more of an emphasis on grass, especially when they're young.   \n\nBeef cows produce milk, but only enough to feed their calves.\n\nDairy cows are thin and lean with a more angular shape. \n\nTheir energy goes into producing milk rather than building muscle and storing fat.\n\nDairy cows have large, pronounced udders and can make 8 to 10 gallons of milk per day. They get milked two to three times a day to keep them comfortable and healthy. They are fed a balanced diet consisting largely of grains and grasses.\n\nCows can only produce milk when they have calves, and both dairy and beef cattle are bred to have one calf per year. They are milked for about 300 days out of the year and then take a break or rest for two months when they get ready to calve. Since dairy bulls can't produce milk, they're sometimes used in beef production, too."
+	},
+	"type": "TABLE"
+}

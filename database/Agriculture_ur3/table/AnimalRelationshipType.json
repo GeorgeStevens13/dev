@@ -1,0 +1,136 @@
+{
+	"name": "AnimalRelationshipType",
+	"properties": {
+		"Name": "AnimalRelationshipType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalRelationshipTypeId",
+					"Description": "The unique identifier of an animal relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalRelationshipType.cdm.json/AnimalRelationshipType",
+						"Name": "AnimalRelationshipTypeId"
+					}
+				},
+				{
+					"Name": "AnimalRelationshipTypeName",
+					"Description": "The name of an animal relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalRelationshipType.cdm.json/AnimalRelationshipType",
+						"Name": "AnimalRelationshipTypeName"
+					}
+				},
+				{
+					"Name": "AnimalRelationshipTypeDescription",
+					"Description": "The description of an animal relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalRelationshipType.cdm.json/AnimalRelationshipType",
+						"Name": "AnimalRelationshipTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "fe8b3fc7-8b37-447a-a44a-ef6d64a06fbc",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalRelationshipType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalRelationshipTypeId\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeId\"},\"AnimalRelationshipTypeName\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeName\"},\"AnimalRelationshipTypeDescription\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalRelationshipType\",\"path\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\"},\"description\":\"The nature of the relationship between two or more animals.\\n\\nEx:\\n- Put-together Cattle\\n- Breeding Stock\\n- Crossbreeding\\n- Sire \\n- Dam\\n- Half sib\\n- Full sib \\n- Calf\\n- Freemartin\\n- Crossbreeding\\n- Terminal Cross\\n- Backcross\\n- Linecross\\n- Random mating\\n\\nwhere:\\n\\nPut-together Cattle\\nCattle that have been assembled by an order buyer from small lots.\\n\\nBreeding Stock\\nSexually mature male and female livestock that are retained to produce offspring.\\n\\nCrossbreeding\\nThe mating of animals of different breeds. For example, breeding a Hereford cow with an Angus bull.\\n\\nSire \\nMale parent of calf\\n\\nDam\\nFemale parent of calf\\n\\nHalf sib\\nHalf brothers or half sisters\\n\\nFull sib \\nFull brothers or full sister\\n\\nCalf\\n\\nFreemartin\\nHeifer calf born as a twin to a bull calf, usually infertile\\n\\nCrossbreeding\\nMating animals from different breeds to utilize hybrid vigor (heterosis), breed\\n\\nTerminal Cross\\nBreeding a female with a bull whose major characteristics focus on weight production. All offspring are sold.\\n\\nBackcross\\nThe mating of a two-breed crossbred offspring back to one of its parental breeds. Example: A Hereford-Angus cross cow bred back to an Angus bull.\\n\\nLinecross\\nOffspring produced by crossing two or more inbred lines.\\n\\nRandom mating\\nA system of mating where every female (cow and/or heifer) has an equal or random chance of being assigned to any bull used for breeding in a particular breeding season. Random mating is required for accurate progeny tests.\",\"primaryKey\":[\"AnimalRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal relationship type.\",\"isNullable\":false,\"name\":\"AnimalRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal relationship type.\",\"isNullable\":true,\"name\":\"AnimalRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalRelationshipType.cdm.json/AnimalRelationshipType\",\"name\":\"AnimalRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal relationship type.\",\"isNullable\":true,\"name\":\"AnimalRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between two or more animals.\n\nEx:\n- Put-together Cattle\n- Breeding Stock\n- Crossbreeding\n- Sire \n- Dam\n- Half sib\n- Full sib \n- Calf\n- Freemartin\n- Crossbreeding\n- Terminal Cross\n- Backcross\n- Linecross\n- Random mating\n\nwhere:\n\nPut-together Cattle\nCattle that have been assembled by an order buyer from small lots.\n\nBreeding Stock\nSexually mature male and female livestock that are retained to produce offspring.\n\nCrossbreeding\nThe mating of animals of different breeds. For example, breeding a Hereford cow with an Angus bull.\n\nSire \nMale parent of calf\n\nDam\nFemale parent of calf\n\nHalf sib\nHalf brothers or half sisters\n\nFull sib \nFull brothers or full sister\n\nCalf\n\nFreemartin\nHeifer calf born as a twin to a bull calf, usually infertile\n\nCrossbreeding\nMating animals from different breeds to utilize hybrid vigor (heterosis), breed\n\nTerminal Cross\nBreeding a female with a bull whose major characteristics focus on weight production. All offspring are sold.\n\nBackcross\nThe mating of a two-breed crossbred offspring back to one of its parental breeds. Example: A Hereford-Angus cross cow bred back to an Angus bull.\n\nLinecross\nOffspring produced by crossing two or more inbred lines.\n\nRandom mating\nA system of mating where every female (cow and/or heifer) has an equal or random chance of being assigned to any bull used for breeding in a particular breeding season. Random mating is required for accurate progeny tests.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalRelationshipTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalRelationshipTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalRelationshipTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "1b2cc29d-9328-4ee8-95c1-64bea7788d12",
+		"Description": "The nature of the relationship between two or more animals.\n\nEx:\n- Put-together Cattle\n- Breeding Stock\n- Crossbreeding\n- Sire \n- Dam\n- Half sib\n- Full sib \n- Calf\n- Freemartin\n- Crossbreeding\n- Terminal Cross\n- Backcross\n- Linecross\n- Random mating\n\nwhere:\n\nPut-together Cattle\nCattle that have been assembled by an order buyer from small lots.\n\nBreeding Stock\nSexually mature male and female livestock that are retained to produce offspring.\n\nCrossbreeding\nThe mating of animals of different breeds. For example, breeding a Hereford cow with an Angus bull.\n\nSire \nMale parent of calf\n\nDam\nFemale parent of calf\n\nHalf sib\nHalf brothers or half sisters\n\nFull sib \nFull brothers or full sister\n\nCalf\n\nFreemartin\nHeifer calf born as a twin to a bull calf, usually infertile\n\nCrossbreeding\nMating animals from different breeds to utilize hybrid vigor (heterosis), breed\n\nTerminal Cross\nBreeding a female with a bull whose major characteristics focus on weight production. All offspring are sold.\n\nBackcross\nThe mating of a two-breed crossbred offspring back to one of its parental breeds. Example: A Hereford-Angus cross cow bred back to an Angus bull.\n\nLinecross\nOffspring produced by crossing two or more inbred lines.\n\nRandom mating\nA system of mating where every female (cow and/or heifer) has an equal or random chance of being assigned to any bull used for breeding in a particular breeding season. Random mating is required for accurate progeny tests."
+	},
+	"type": "TABLE"
+}

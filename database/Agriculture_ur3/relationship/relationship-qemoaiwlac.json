@@ -1,0 +1,28 @@
+{
+	"name": "relationship-qemoaiwlac",
+	"properties": {
+		"Name": "relationship-qemoaiwlac",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CarcassQualityGrade",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarcassQualityGradeId",
+				"ToColumnName": "CarcassQualityGradeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"CarcassQualityGradeId\",\"toAttribute\":\"CarcassQualityGradeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "c57f1d61-f935-4fe0-8318-613c40ca015b"
+	},
+	"type": "RELATIONSHIP"
+}

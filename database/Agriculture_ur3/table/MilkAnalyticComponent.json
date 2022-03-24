@@ -1,0 +1,136 @@
+{
+	"name": "MilkAnalyticComponent",
+	"properties": {
+		"Name": "MilkAnalyticComponent",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "MilkAnalyticComponentId",
+					"Description": "The unique identifier of a milk analytic component.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkAnalyticComponent.cdm.json/MilkAnalyticComponent",
+						"Name": "MilkAnalyticComponentId"
+					}
+				},
+				{
+					"Name": "MilkAnalyticComponentName",
+					"Description": "The name of a milk analytic component.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkAnalyticComponent.cdm.json/MilkAnalyticComponent",
+						"Name": "MilkAnalyticComponentName"
+					}
+				},
+				{
+					"Name": "MilkAnalyticComponentDescription",
+					"Description": "The description of a milk analytic component.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkAnalyticComponent.cdm.json/MilkAnalyticComponent",
+						"Name": "MilkAnalyticComponentDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "f0a2b114-0051-4933-8f68-d604dc819791",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MilkAnalyticComponent",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MilkAnalyticComponent",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MilkAnalyticComponentId\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentId\"},\"MilkAnalyticComponentName\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentName\"},\"MilkAnalyticComponentDescription\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MilkAnalyticComponent\",\"path\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\"},\"description\":\"The component(s) measured in cattle milk analysis.\\n\\nEx:\\n- Somatic cell count\\n- Fat\\n- Protein\\n- Conductivity\\n- Density\\n- Freezing point\\n- Added water\",\"primaryKey\":[\"MilkAnalyticComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a milk analytic component.\",\"isNullable\":false,\"name\":\"MilkAnalyticComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a milk analytic component.\",\"isNullable\":true,\"name\":\"MilkAnalyticComponentName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"name\":\"MilkAnalyticComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a milk analytic component.\",\"isNullable\":true,\"name\":\"MilkAnalyticComponentDescription\"}]}}}",
+			"Description": "The component(s) measured in cattle milk analysis.\n\nEx:\n- Somatic cell count\n- Fat\n- Protein\n- Conductivity\n- Density\n- Freezing point\n- Added water",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MilkAnalyticComponentId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"MilkAnalyticComponentId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MilkAnalyticComponentName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MilkAnalyticComponentDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "c0d80b82-663e-4afc-ae18-22ed3f56bc71",
+		"Description": "The component(s) measured in cattle milk analysis.\n\nEx:\n- Somatic cell count\n- Fat\n- Protein\n- Conductivity\n- Density\n- Freezing point\n- Added water"
+	},
+	"type": "TABLE"
+}

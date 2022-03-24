@@ -1,0 +1,136 @@
+{
+	"name": "CarcassQualityGrade",
+	"properties": {
+		"Name": "CarcassQualityGrade",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "CarcassQualityGradeId",
+					"Description": "The unique identifier of a carcass quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CarcassQualityGrade.cdm.json/CarcassQualityGrade",
+						"Name": "CarcassQualityGradeId"
+					}
+				},
+				{
+					"Name": "CarcassQualityGradeName",
+					"Description": "The name of a carcass quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CarcassQualityGrade.cdm.json/CarcassQualityGrade",
+						"Name": "CarcassQualityGradeName"
+					}
+				},
+				{
+					"Name": "CarcassQualityGradeDescription",
+					"Description": "The description of a carcass quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CarcassQualityGrade.cdm.json/CarcassQualityGrade",
+						"Name": "CarcassQualityGradeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "c73cca88-db19-4b53-a5c6-2b80e1a6d94b",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CarcassQualityGrade",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CarcassQualityGrade",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CarcassQualityGradeId\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeId\"},\"CarcassQualityGradeName\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeName\"},\"CarcassQualityGradeDescription\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CarcassQualityGrade\",\"path\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\"},\"description\":\"An estimate of palatability based primarily on marbling and maturity and generally to a lesser extent on color, texture and firmness of lean. Days on feed and fat thickness (of 0.25 inches or more) are comparable to quality grade in estimating eating quality.\\n\\nUSDA Quality Grades are an assessment of eating quality and are determined by carcass maturity and marbling. \\n\\nThere beef carcass maturity: A, B, C, D and E.\",\"primaryKey\":[\"CarcassQualityGradeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a carcass quality grade.\",\"isNullable\":false,\"name\":\"CarcassQualityGradeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a carcass quality grade.\",\"isNullable\":true,\"name\":\"CarcassQualityGradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CarcassQualityGrade.cdm.json/CarcassQualityGrade\",\"name\":\"CarcassQualityGradeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a carcass quality grade.\",\"isNullable\":true,\"name\":\"CarcassQualityGradeDescription\"}]}}}",
+			"Description": "An estimate of palatability based primarily on marbling and maturity and generally to a lesser extent on color, texture and firmness of lean. Days on feed and fat thickness (of 0.25 inches or more) are comparable to quality grade in estimating eating quality.\n\nUSDA Quality Grades are an assessment of eating quality and are determined by carcass maturity and marbling. \n\nThere beef carcass maturity: A, B, C, D and E.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "CarcassQualityGradeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"CarcassQualityGradeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CarcassQualityGradeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CarcassQualityGradeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "b3e86a4e-6925-4a42-b77e-32925beee94c",
+		"Description": "An estimate of palatability based primarily on marbling and maturity and generally to a lesser extent on color, texture and firmness of lean. Days on feed and fat thickness (of 0.25 inches or more) are comparable to quality grade in estimating eating quality.\n\nUSDA Quality Grades are an assessment of eating quality and are determined by carcass maturity and marbling. \n\nThere beef carcass maturity: A, B, C, D and E."
+	},
+	"type": "TABLE"
+}

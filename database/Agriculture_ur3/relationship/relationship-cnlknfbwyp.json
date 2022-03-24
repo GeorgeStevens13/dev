@@ -1,0 +1,28 @@
+{
+	"name": "relationship-cnlknfbwyp",
+	"properties": {
+		"Name": "relationship-cnlknfbwyp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BodyConditionScore",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BodyConditionScoreId",
+				"ToColumnName": "BodyConditionScoreId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"BodyConditionScoreId\",\"toAttribute\":\"BodyConditionScoreId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "63b0c9c4-3786-4449-b9d8-c2af7bdca950"
+	},
+	"type": "RELATIONSHIP"
+}

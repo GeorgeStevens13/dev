@@ -1,0 +1,136 @@
+{
+	"name": "UsdaYieldGrade",
+	"properties": {
+		"Name": "UsdaYieldGrade",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "UsdaYieldGradeId",
+					"Description": "The unique identifier of a USDA Yield Grade.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "UsdaYieldGrade.cdm.json/UsdaYieldGrade",
+						"Name": "UsdaYieldGradeId"
+					}
+				},
+				{
+					"Name": "UsdaYieldGradeName",
+					"Description": "The name a USDA Yield Grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "UsdaYieldGrade.cdm.json/UsdaYieldGrade",
+						"Name": "UsdaYieldGradeName"
+					}
+				},
+				{
+					"Name": "UsdaYieldGradeDescription",
+					"Description": "The description of a USDA Yield Grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "UsdaYieldGrade.cdm.json/UsdaYieldGrade",
+						"Name": "UsdaYieldGradeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "71dce4f7-906f-4216-8a31-27a45fab4cca",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/UsdaYieldGrade",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/UsdaYieldGrade",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"UsdaYieldGradeId\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeId\"},\"UsdaYieldGradeName\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeName\"},\"UsdaYieldGradeDescription\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"UsdaYieldGrade\",\"path\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\"},\"description\":\"Yield grades are expressed in numbers that estimate the percentage  of expected cutability from a carcass from number 1 through number 5.\\n\\nCutability is defined as the percentage of closely trimmed, boneless, retail cuts from the round, loin, rib and chuck - the four major beef wholesale cuts. It is an\\nestimate of the relative amount of lean, edible meat from a carcass.\\n\\nThe yield grade is determined by evaluating four carcass factors:\\n\\n1. External fat thickness over the ribeye.\\n2. Ribeye area.\\n3. Estimate of the percentage of kidney, pelvic and heart fat.\\n4. Hot carcass weight\",\"primaryKey\":[\"UsdaYieldGradeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a USDA Yield Grade.\",\"isNullable\":false,\"name\":\"UsdaYieldGradeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name a USDA Yield Grade.\",\"isNullable\":true,\"name\":\"UsdaYieldGradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"name\":\"UsdaYieldGradeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a USDA Yield Grade.\",\"isNullable\":true,\"name\":\"UsdaYieldGradeDescription\"}]}}}",
+			"Description": "Yield grades are expressed in numbers that estimate the percentage  of expected cutability from a carcass from number 1 through number 5.\n\nCutability is defined as the percentage of closely trimmed, boneless, retail cuts from the round, loin, rib and chuck - the four major beef wholesale cuts. It is an\nestimate of the relative amount of lean, edible meat from a carcass.\n\nThe yield grade is determined by evaluating four carcass factors:\n\n1. External fat thickness over the ribeye.\n2. Ribeye area.\n3. Estimate of the percentage of kidney, pelvic and heart fat.\n4. Hot carcass weight",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "UsdaYieldGradeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"UsdaYieldGradeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"UsdaYieldGradeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UsdaYieldGradeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "32baec2c-3256-4556-bdda-b71375cd0dc5",
+		"Description": "Yield grades are expressed in numbers that estimate the percentage  of expected cutability from a carcass from number 1 through number 5.\n\nCutability is defined as the percentage of closely trimmed, boneless, retail cuts from the round, loin, rib and chuck - the four major beef wholesale cuts. It is an\nestimate of the relative amount of lean, edible meat from a carcass.\n\nThe yield grade is determined by evaluating four carcass factors:\n\n1. External fat thickness over the ribeye.\n2. Ribeye area.\n3. Estimate of the percentage of kidney, pelvic and heart fat.\n4. Hot carcass weight"
+	},
+	"type": "TABLE"
+}

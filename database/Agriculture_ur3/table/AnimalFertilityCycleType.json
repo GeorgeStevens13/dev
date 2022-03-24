@@ -1,0 +1,136 @@
+{
+	"name": "AnimalFertilityCycleType",
+	"properties": {
+		"Name": "AnimalFertilityCycleType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalFertilityCycleTypeId",
+					"Description": "The unique identifier of an animal fertility cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType",
+						"Name": "AnimalFertilityCycleTypeId"
+					}
+				},
+				{
+					"Name": "AnimalFertilityCycleTypeName",
+					"Description": "The name of an animal fertility cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType",
+						"Name": "AnimalFertilityCycleTypeName"
+					}
+				},
+				{
+					"Name": "AnimalFertilityCycleTypeDescription",
+					"Description": "The description of an animal fertility cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType",
+						"Name": "AnimalFertilityCycleTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "84ff82a5-bb05-4b61-b6aa-81e7ac71195c",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFertilityCycleType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFertilityCycleType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalFertilityCycleTypeId\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeId\"},\"AnimalFertilityCycleTypeName\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeName\"},\"AnimalFertilityCycleTypeDescription\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalFertilityCycleType\",\"path\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\"},\"description\":\"The fertility or oestrus cycle of an animal.\\n\\nEx:\\n- Heat\\n- Estrus\\n- Ovulation\\n- Luteal phase\\n- No pregnancy\\n- Pregnancy\\n- Cyclicity\",\"primaryKey\":[\"AnimalFertilityCycleTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal fertility cycle type.\",\"isNullable\":false,\"name\":\"AnimalFertilityCycleTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal fertility cycle type.\",\"isNullable\":true,\"name\":\"AnimalFertilityCycleTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFertilityCycleType.cdm.json/AnimalFertilityCycleType\",\"name\":\"AnimalFertilityCycleTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal fertility cycle type.\",\"isNullable\":true,\"name\":\"AnimalFertilityCycleTypeDescription\"}]}}}",
+			"Description": "The fertility or oestrus cycle of an animal.\n\nEx:\n- Heat\n- Estrus\n- Ovulation\n- Luteal phase\n- No pregnancy\n- Pregnancy\n- Cyclicity",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalFertilityCycleTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalFertilityCycleTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalFertilityCycleTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFertilityCycleTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "9d45aa5d-ae3a-47ac-bd12-32cbb4b20027",
+		"Description": "The fertility or oestrus cycle of an animal.\n\nEx:\n- Heat\n- Estrus\n- Ovulation\n- Luteal phase\n- No pregnancy\n- Pregnancy\n- Cyclicity"
+	},
+	"type": "TABLE"
+}

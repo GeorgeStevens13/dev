@@ -1,0 +1,176 @@
+{
+	"name": "HerdCalvingSeason",
+	"properties": {
+		"Name": "HerdCalvingSeason",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "HerdId",
+					"Description": "The unique identifier of a herd.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdCalvingSeason.cdm.json/HerdCalvingSeason",
+						"Name": "HerdId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdCalvingSeason.cdm.json/HerdCalvingSeason",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdCalvingSeason.cdm.json/HerdCalvingSeason",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "NumberOfCalfBirths",
+					"Description": "The number of calf births.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdCalvingSeason.cdm.json/HerdCalvingSeason",
+						"Name": "NumberOfCalfBirths"
+					}
+				},
+				{
+					"Name": "HerdCalvingSeasonNote",
+					"Description": "A note, comment or additional information regarding the herd calving season.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdCalvingSeason.cdm.json/HerdCalvingSeason",
+						"Name": "HerdCalvingSeasonNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "4930ffc2-138b-4eea-84a0-c5e4fd89716c",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdCalvingSeason",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdCalvingSeason",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HerdId\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"HerdId\"},\"PeriodStartTimestamp\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"PeriodEndTimestamp\"},\"NumberOfCalfBirths\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"NumberOfCalfBirths\"},\"HerdCalvingSeasonNote\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"HerdCalvingSeasonNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HerdCalvingSeason\",\"path\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\"},\"description\":\"The season(s) of the year when the calves are born. Limiting calving seasons is the first step to performance testing the whole herd, accurate records and consolidated management practices.\",\"primaryKey\":[\"HerdId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"HerdId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a herd.\",\"isNullable\":false,\"name\":\"HerdId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"NumberOfCalfBirths\"},\"dataType\":\"integer\",\"description\":\"The number of calf births.\",\"isNullable\":true,\"name\":\"NumberOfCalfBirths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdCalvingSeason.cdm.json/HerdCalvingSeason\",\"name\":\"HerdCalvingSeasonNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the herd calving season.\",\"isNullable\":true,\"name\":\"HerdCalvingSeasonNote\"}]}}}",
+			"Description": "The season(s) of the year when the calves are born. Limiting calving seasons is the first step to performance testing the whole herd, accurate records and consolidated management practices.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "HerdId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"HerdId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NumberOfCalfBirths\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"HerdCalvingSeasonNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "894effdf-29c3-4c73-a152-1e98c89a1ac3",
+		"Description": "The season(s) of the year when the calves are born. Limiting calving seasons is the first step to performance testing the whole herd, accurate records and consolidated management practices."
+	},
+	"type": "TABLE"
+}

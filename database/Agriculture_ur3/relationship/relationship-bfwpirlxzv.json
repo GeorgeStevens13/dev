@@ -1,0 +1,28 @@
+{
+	"name": "relationship-bfwpirlxzv",
+	"properties": {
+		"Name": "relationship-bfwpirlxzv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MilkAnalyticComponent",
+		"ToTableName": "AnimalMilkAnalysis",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MilkAnalyticComponentId",
+				"ToColumnName": "MilkAnalyticComponentId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MilkAnalyticComponent.cdm.json/MilkAnalyticComponent\",\"toEntity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"joinPairs\":[{\"fromAttribute\":\"MilkAnalyticComponentId\",\"toAttribute\":\"MilkAnalyticComponentId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "3f31bc2c-e0f2-4509-ba32-51d529c3dda4"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,176 @@
+{
+	"name": "AnimalLifeCycle",
+	"properties": {
+		"Name": "AnimalLifeCycle",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycle.cdm.json/AnimalLifeCycle",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycle.cdm.json/AnimalLifeCycle",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycle.cdm.json/AnimalLifeCycle",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "AnimalLifeCycleTypeId",
+					"Description": "The unique identifier of an animal life cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycle.cdm.json/AnimalLifeCycle",
+						"Name": "AnimalLifeCycleTypeId"
+					}
+				},
+				{
+					"Name": "AnimalLifeCycleNote",
+					"Description": "A note, comment or additional information regarding the annual life cycle.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycle.cdm.json/AnimalLifeCycle",
+						"Name": "AnimalLifeCycleNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "9811a460-f910-40e3-8ebf-3963f139dbfa",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalLifeCycle",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalLifeCycle",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalId\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"PeriodEndTimestamp\"},\"AnimalLifeCycleTypeId\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalLifeCycleTypeId\"},\"AnimalLifeCycleNote\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalLifeCycleNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalLifeCycle\",\"path\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\"},\"description\":\"The animal life cycle as of the associated period.\",\"primaryKey\":[\"AnimalId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalLifeCycleTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal life cycle type.\",\"isNullable\":true,\"name\":\"AnimalLifeCycleTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"name\":\"AnimalLifeCycleNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the annual life cycle.\",\"isNullable\":true,\"name\":\"AnimalLifeCycleNote\"}]}}}",
+			"Description": "The animal life cycle as of the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalLifeCycleTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalLifeCycleNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "637663be-ac09-4710-9998-076d2d430ce8",
+		"Description": "The animal life cycle as of the associated period."
+	},
+	"type": "TABLE"
+}

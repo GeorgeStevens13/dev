@@ -1,0 +1,136 @@
+{
+	"name": "AnimalEventAssetRelationshipType",
+	"properties": {
+		"Name": "AnimalEventAssetRelationshipType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalEventAssetRelationshipTypeId",
+					"Description": "The unique identifier of an animal event asset relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType",
+						"Name": "AnimalEventAssetRelationshipTypeId"
+					}
+				},
+				{
+					"Name": "AnimalEventAssetRelationshipTypeName",
+					"Description": "The name of an animal event asset relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType",
+						"Name": "AnimalEventAssetRelationshipTypeName"
+					}
+				},
+				{
+					"Name": "AnimalEventAssetRelationshipTypeDescription",
+					"Description": "The description of an animal event asset relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType",
+						"Name": "AnimalEventAssetRelationshipTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "75af0eb0-8529-4726-9634-267355156106",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventAssetRelationshipType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventAssetRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalEventAssetRelationshipTypeId\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeId\"},\"AnimalEventAssetRelationshipTypeName\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeName\"},\"AnimalEventAssetRelationshipTypeDescription\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalEventAssetRelationshipType\",\"path\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\"},\"description\":\"The nature of the animal event - asset relationship type.\\n\\nEx:\\n- Used-by asset\\n- Consumer-by asset\\n- Required-by asset\",\"primaryKey\":[\"AnimalEventAssetRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal event asset relationship type.\",\"isNullable\":false,\"name\":\"AnimalEventAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal event asset relationship type.\",\"isNullable\":true,\"name\":\"AnimalEventAssetRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"name\":\"AnimalEventAssetRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal event asset relationship type.\",\"isNullable\":true,\"name\":\"AnimalEventAssetRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the animal event - asset relationship type.\n\nEx:\n- Used-by asset\n- Consumer-by asset\n- Required-by asset",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalEventAssetRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalEventAssetRelationshipTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalEventAssetRelationshipTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalEventAssetRelationshipTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "7d0f0824-bac2-4f4e-95b9-36a0bc5e9856",
+		"Description": "The nature of the animal event - asset relationship type.\n\nEx:\n- Used-by asset\n- Consumer-by asset\n- Required-by asset"
+	},
+	"type": "TABLE"
+}

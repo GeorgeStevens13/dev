@@ -1,0 +1,175 @@
+{
+	"name": "AnimalWeight",
+	"properties": {
+		"Name": "AnimalWeight",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The recorded weight of the animal as of the associated timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalWeight.cdm.json/AnimalWeight",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp of the animal weight.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalWeight.cdm.json/AnimalWeight",
+						"Name": "Timestamp"
+					}
+				},
+				{
+					"Name": "LiveWeightPounds",
+					"Description": "Weight of the live animal in pounds.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalWeight.cdm.json/AnimalWeight",
+						"Name": "LiveWeightPounds"
+					}
+				},
+				{
+					"Name": "CarcassWeightPounds",
+					"Description": "Weight of carcass after organs, head hooves, etc. removed in pounds.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalWeight.cdm.json/AnimalWeight",
+						"Name": "CarcassWeightPounds"
+					}
+				},
+				{
+					"Name": "AnimalWeightNote",
+					"Description": "A note, comment or additional information regarding the animal weight.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalWeight.cdm.json/AnimalWeight",
+						"Name": "AnimalWeightNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "822248dd-9d52-46da-97be-3787eeed66d0",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalWeight",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalWeight",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"AnimalId\"},\"Timestamp\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"Timestamp\"},\"LiveWeightPounds\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"LiveWeightPounds\"},\"CarcassWeightPounds\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"CarcassWeightPounds\"},\"AnimalWeightNote\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"AnimalWeightNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalWeight\",\"path\":\"AnimalWeight.cdm.json/AnimalWeight\"},\"description\":\"The recorded weight of the animal as of the associated timestamp.\",\"primaryKey\":[\"AnimalId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The recorded weight of the animal as of the associated timestamp.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the animal weight.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"LiveWeightPounds\"},\"dataType\":\"integer\",\"description\":\"Weight of the live animal in pounds.\",\"isNullable\":true,\"name\":\"LiveWeightPounds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"CarcassWeightPounds\"},\"dataType\":\"integer\",\"description\":\"Weight of carcass after organs, head hooves, etc. removed in pounds.\",\"isNullable\":true,\"name\":\"CarcassWeightPounds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalWeight.cdm.json/AnimalWeight\",\"name\":\"AnimalWeightNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal weight.\",\"isNullable\":true,\"name\":\"AnimalWeightNote\"}]}}}",
+			"Description": "The recorded weight of the animal as of the associated timestamp.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,Timestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"Timestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"LiveWeightPounds\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CarcassWeightPounds\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalWeightNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "e9273b67-ce4b-47b4-b4b3-e976bc1147ab",
+		"Description": "The recorded weight of the animal as of the associated timestamp."
+	},
+	"type": "TABLE"
+}

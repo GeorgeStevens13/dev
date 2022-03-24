@@ -1,0 +1,28 @@
+{
+	"name": "relationship-fmvuvytsqf",
+	"properties": {
+		"Name": "relationship-fmvuvytsqf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HerdType",
+		"ToTableName": "Herd",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HerdTypeId",
+				"ToColumnName": "HerdTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HerdType.cdm.json/HerdType\",\"toEntity\":\"Herd.cdm.json/Herd\",\"joinPairs\":[{\"fromAttribute\":\"HerdTypeId\",\"toAttribute\":\"HerdTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "7dea0c95-9291-4cb7-a10a-340ce5511a18"
+	},
+	"type": "RELATIONSHIP"
+}

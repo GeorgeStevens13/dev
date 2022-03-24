@@ -1,0 +1,28 @@
+{
+	"name": "relationship-xizxxsjazl",
+	"properties": {
+		"Name": "relationship-xizxxsjazl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MilkingMethodType",
+		"ToTableName": "AnimalMilkProduction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MilkingMethodTypeId",
+				"ToColumnName": "MilkingMethodTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"toEntity\":\"AnimalMilkProduction.cdm.json/AnimalMilkProduction\",\"joinPairs\":[{\"fromAttribute\":\"MilkingMethodTypeId\",\"toAttribute\":\"MilkingMethodTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "1ca6d0e2-d402-4bc5-aa3d-b84853974a90"
+	},
+	"type": "RELATIONSHIP"
+}

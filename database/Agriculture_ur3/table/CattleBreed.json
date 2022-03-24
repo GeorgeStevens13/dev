@@ -1,0 +1,136 @@
+{
+	"name": "CattleBreed",
+	"properties": {
+		"Name": "CattleBreed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "CattleBreedId",
+					"Description": "The unique identifier of a cattle breed.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleBreed.cdm.json/CattleBreed",
+						"Name": "CattleBreedId"
+					}
+				},
+				{
+					"Name": "CattleBreedName",
+					"Description": "The name of a cattle breed.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleBreed.cdm.json/CattleBreed",
+						"Name": "CattleBreedName"
+					}
+				},
+				{
+					"Name": "CattleBreedDescription",
+					"Description": "The description of a cattle breed.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "CattleBreed.cdm.json/CattleBreed",
+						"Name": "CattleBreedDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "87c51a95-2aeb-43b0-86b1-20a857fdee02",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CattleBreed",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/CattleBreed",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CattleBreedId\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedId\"},\"CattleBreedName\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedName\"},\"CattleBreedDescription\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CattleBreed\",\"path\":\"CattleBreed.cdm.json/CattleBreed\"},\"description\":\"A breed of cattle, which is a stock of animals within a species having a distinctive appearance and typically having been developed by deliberate selection.\\n\\nEx: \\n(Beef)\\n- Black Angus\\n- Charolais\\n- Hereford\\n- Simmental\\n- Red Angus\\n- Texas Longhorn\\n- Gelbvieh\\n- Holstein\\n- Limousin\\n- Highlands\\n\\n(Dairy)\\n- Holstein\\n- Brown Swiss\\n- Guernsey\\n- Ayrshire\\n- Jersey\\n- Red and White \\n- Milking Shorthorn.\",\"primaryKey\":[\"CattleBreedId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cattle breed.\",\"isNullable\":false,\"name\":\"CattleBreedId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a cattle breed.\",\"isNullable\":true,\"name\":\"CattleBreedName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CattleBreed.cdm.json/CattleBreed\",\"name\":\"CattleBreedDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a cattle breed.\",\"isNullable\":true,\"name\":\"CattleBreedDescription\"}]}}}",
+			"Description": "A breed of cattle, which is a stock of animals within a species having a distinctive appearance and typically having been developed by deliberate selection.\n\nEx: \n(Beef)\n- Black Angus\n- Charolais\n- Hereford\n- Simmental\n- Red Angus\n- Texas Longhorn\n- Gelbvieh\n- Holstein\n- Limousin\n- Highlands\n\n(Dairy)\n- Holstein\n- Brown Swiss\n- Guernsey\n- Ayrshire\n- Jersey\n- Red and White \n- Milking Shorthorn.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "CattleBreedId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"CattleBreedId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CattleBreedName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CattleBreedDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "1a1b05a6-354d-45bc-937e-8824bf0ce9a7",
+		"Description": "A breed of cattle, which is a stock of animals within a species having a distinctive appearance and typically having been developed by deliberate selection.\n\nEx: \n(Beef)\n- Black Angus\n- Charolais\n- Hereford\n- Simmental\n- Red Angus\n- Texas Longhorn\n- Gelbvieh\n- Holstein\n- Limousin\n- Highlands\n\n(Dairy)\n- Holstein\n- Brown Swiss\n- Guernsey\n- Ayrshire\n- Jersey\n- Red and White \n- Milking Shorthorn."
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,136 @@
+{
+	"name": "AnimalPositionType",
+	"properties": {
+		"Name": "AnimalPositionType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalPositionTypeId",
+					"Description": "The unique identifier of an animal position type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPositionType.cdm.json/AnimalPositionType",
+						"Name": "AnimalPositionTypeId"
+					}
+				},
+				{
+					"Name": "AnimalPositionTypeName",
+					"Description": "The name of an animal position type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPositionType.cdm.json/AnimalPositionType",
+						"Name": "AnimalPositionTypeName"
+					}
+				},
+				{
+					"Name": "AnimalPositionTypeDescription",
+					"Description": "The description of an animal position type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalPositionType.cdm.json/AnimalPositionType",
+						"Name": "AnimalPositionTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "1f981afe-06f0-47db-89a7-8815dfdf88c9",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalPositionType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalPositionType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalPositionTypeId\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeId\"},\"AnimalPositionTypeName\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeName\"},\"AnimalPositionTypeDescription\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalPositionType\",\"path\":\"AnimalPositionType.cdm.json/AnimalPositionType\"},\"description\":\"The body position of the animal.\\n\\nEx:\\n- Standing\\n- Lying\\n- Eating\\n- Resting\",\"primaryKey\":[\"AnimalPositionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal position type.\",\"isNullable\":false,\"name\":\"AnimalPositionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal position type.\",\"isNullable\":true,\"name\":\"AnimalPositionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"name\":\"AnimalPositionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal position type.\",\"isNullable\":true,\"name\":\"AnimalPositionTypeDescription\"}]}}}",
+			"Description": "The body position of the animal.\n\nEx:\n- Standing\n- Lying\n- Eating\n- Resting",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalPositionTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalPositionTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalPositionTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalPositionTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "eeb64077-58b6-4358-a1b8-bcc94bba99d0",
+		"Description": "The body position of the animal.\n\nEx:\n- Standing\n- Lying\n- Eating\n- Resting"
+	},
+	"type": "TABLE"
+}

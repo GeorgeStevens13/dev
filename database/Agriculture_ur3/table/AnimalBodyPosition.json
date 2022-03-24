@@ -1,0 +1,214 @@
+{
+	"name": "AnimalBodyPosition",
+	"properties": {
+		"Name": "AnimalBodyPosition",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "AnimalPositionTypeId",
+					"Description": "The unique identifier of an animal position type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "AnimalPositionTypeId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "NumberOfMinutes",
+					"Description": "The number of minutes in the associated position during the indicated period.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "NumberOfMinutes"
+					}
+				},
+				{
+					"Name": "SensorId",
+					"Description": "The unique identifier of a sensor.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "SensorId"
+					}
+				},
+				{
+					"Name": "AnimalPositionNote",
+					"Description": "A note, comment or additional information regarding the animal position.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalBodyPosition.cdm.json/AnimalBodyPosition",
+						"Name": "AnimalPositionNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "a53493d1-c6cd-45ee-bbda-db8a7c2a52dd",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalBodyPosition",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalBodyPosition",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalId\"},\"AnimalPositionTypeId\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalPositionTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"PeriodEndTimestamp\"},\"NumberOfMinutes\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"NumberOfMinutes\"},\"SensorId\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"SensorId\"},\"AnimalPositionNote\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalPositionNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalBodyPosition\",\"path\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\"},\"description\":\"The number of minutes in which the animal assumed the associated position during the period.\",\"primaryKey\":[\"AnimalId\",\"AnimalPositionTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalPositionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal position type.\",\"isNullable\":false,\"name\":\"AnimalPositionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"NumberOfMinutes\"},\"dataType\":\"integer\",\"description\":\"The number of minutes in the associated position during the indicated period.\",\"isNullable\":true,\"name\":\"NumberOfMinutes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"SensorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a sensor.\",\"isNullable\":true,\"name\":\"SensorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"name\":\"AnimalPositionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal position.\",\"isNullable\":true,\"name\":\"AnimalPositionNote\"}]}}}",
+			"Description": "The number of minutes in which the animal assumed the associated position during the period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,AnimalPositionTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalPositionTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NumberOfMinutes\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SensorId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalPositionNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "f280ed83-833a-4993-a48f-b655b52b073c",
+		"Description": "The number of minutes in which the animal assumed the associated position during the period."
+	},
+	"type": "TABLE"
+}

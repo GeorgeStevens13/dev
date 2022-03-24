@@ -1,0 +1,28 @@
+{
+	"name": "relationship-blxdxqhyur",
+	"properties": {
+		"Name": "relationship-blxdxqhyur",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EstimatedBreedingValue",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EstimatedBreedingValueId",
+				"ToColumnName": "EstimatedBreedingValueId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EstimatedBreedingValue.cdm.json/EstimatedBreedingValue\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"EstimatedBreedingValueId\",\"toAttribute\":\"EstimatedBreedingValueId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "cf939613-13fe-4c4e-bd7f-6e99dc0e8c98"
+	},
+	"type": "RELATIONSHIP"
+}

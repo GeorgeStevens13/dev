@@ -1,0 +1,28 @@
+{
+	"name": "relationship-lwfhlesucy",
+	"properties": {
+		"Name": "relationship-lwfhlesucy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeatQualityGrade",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeatQualityGradeId",
+				"ToColumnName": "MeatQualityGradeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"MeatQualityGradeId\",\"toAttribute\":\"MeatQualityGradeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "c62d179d-117b-49f2-b562-6dbbef92b899"
+	},
+	"type": "RELATIONSHIP"
+}

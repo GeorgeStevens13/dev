@@ -1,0 +1,214 @@
+{
+	"name": "AnimalMilkAnalysis",
+	"properties": {
+		"Name": "AnimalMilkAnalysis",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "MilkAnalyticComponentId",
+					"Description": "The unique identifier of a milk analytic component.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "MilkAnalyticComponentId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "MilkAnalyticComponentUnits",
+					"Description": "The units of the associated milk analytic component upon analysis.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "MilkAnalyticComponentUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "UnitOfMeasureId"
+					}
+				},
+				{
+					"Name": "AnimalMilkAnalysisNote",
+					"Description": "A note, comment or additional information regarding the animal milk analysis.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis",
+						"Name": "AnimalMilkAnalysisNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "c7ad8f07-69b0-46bc-a3bb-c302f45a525a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalMilkAnalysis",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalMilkAnalysis",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"AnimalId\"},\"MilkAnalyticComponentId\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"MilkAnalyticComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"PeriodEndTimestamp\"},\"MilkAnalyticComponentUnits\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"MilkAnalyticComponentUnits\"},\"UnitOfMeasureId\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"UnitOfMeasureId\"},\"AnimalMilkAnalysisNote\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"AnimalMilkAnalysisNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalMilkAnalysis\",\"path\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\"},\"description\":\"The analytic components of milk produced by the animal during the period.\",\"primaryKey\":[\"AnimalId\",\"MilkAnalyticComponentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"MilkAnalyticComponentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a milk analytic component.\",\"isNullable\":false,\"name\":\"MilkAnalyticComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"MilkAnalyticComponentUnits\"},\"dataType\":\"integer\",\"description\":\"The units of the associated milk analytic component upon analysis.\",\"isNullable\":true,\"name\":\"MilkAnalyticComponentUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalMilkAnalysis.cdm.json/AnimalMilkAnalysis\",\"name\":\"AnimalMilkAnalysisNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal milk analysis.\",\"isNullable\":true,\"name\":\"AnimalMilkAnalysisNote\"}]}}}",
+			"Description": "The analytic components of milk produced by the animal during the period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,MilkAnalyticComponentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MilkAnalyticComponentId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MilkAnalyticComponentUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalMilkAnalysisNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "26c6389b-48e4-4980-b85b-081e208a6ebd",
+		"Description": "The analytic components of milk produced by the animal during the period."
+	},
+	"type": "TABLE"
+}

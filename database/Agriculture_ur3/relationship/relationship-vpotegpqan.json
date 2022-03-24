@@ -1,0 +1,28 @@
+{
+	"name": "relationship-vpotegpqan",
+	"properties": {
+		"Name": "relationship-vpotegpqan",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalEventPartyRelationshipType",
+		"ToTableName": "AnimalEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalEventPartyRelationshipTypeId",
+				"ToColumnName": "AnimalEventPartyRelationshipTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"toEntity\":\"AnimalEventRelatedParty.cdm.json/AnimalEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"AnimalEventPartyRelationshipTypeId\",\"toAttribute\":\"AnimalEventPartyRelationshipTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "79a7276d-8c53-49c1-b507-6f8d6e016552"
+	},
+	"type": "RELATIONSHIP"
+}

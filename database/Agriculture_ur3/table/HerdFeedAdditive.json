@@ -1,0 +1,271 @@
+{
+	"name": "HerdFeedAdditive",
+	"properties": {
+		"Name": "HerdFeedAdditive",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "HerdId",
+					"Description": "The unique identifier of a herd.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "HerdId"
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "ItemSku"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "FeedAdditiveTypeId",
+					"Description": "The unique identifier of a feed additive type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "FeedAdditiveTypeId"
+					}
+				},
+				{
+					"Name": "AdditiveQuantityUnits",
+					"Description": "The quantity of additive.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "AdditiveQuantityUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "UnitOfMeasureId"
+					}
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "GeographicAreaId"
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "LocationId"
+					}
+				},
+				{
+					"Name": "AnimalHerdFeedAdditiveNote",
+					"Description": "A note, comment or additional information regarding the animal herd feed additive.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdFeedAdditive.cdm.json/HerdFeedAdditive",
+						"Name": "AnimalHerdFeedAdditiveNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "85d7fcdd-e425-40bb-87e0-6e34910e11e2",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdFeedAdditive",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdFeedAdditive",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HerdId\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"HerdId\"},\"ItemSku\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"ItemSku\"},\"PeriodStartTimestamp\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"PeriodEndTimestamp\"},\"FeedAdditiveTypeId\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"FeedAdditiveTypeId\"},\"AdditiveQuantityUnits\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"AdditiveQuantityUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"UnitOfMeasureId\"},\"GeographicAreaId\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"GeographicAreaId\"},\"LocationId\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"LocationId\"},\"AnimalHerdFeedAdditiveNote\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"AnimalHerdFeedAdditiveNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HerdFeedAdditive\",\"path\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\"},\"description\":\"Additive(s) given to the herd during the associated period.\",\"primaryKey\":[\"HerdId\",\"ItemSku\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"HerdId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a herd.\",\"isNullable\":false,\"name\":\"HerdId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"FeedAdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feed additive type.\",\"isNullable\":false,\"name\":\"FeedAdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"AdditiveQuantityUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of additive.\",\"isNullable\":true,\"name\":\"AdditiveQuantityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"name\":\"AnimalHerdFeedAdditiveNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal herd feed additive.\",\"isNullable\":true,\"name\":\"AnimalHerdFeedAdditiveNote\"}]}}}",
+			"Description": "Additive(s) given to the herd during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "HerdId,ItemSku,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"HerdId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ItemSku\",\"type\":\"string\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FeedAdditiveTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AdditiveQuantityUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"GeographicAreaId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"LocationId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalHerdFeedAdditiveNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "a4d4ff60-2d4a-4955-aa57-ce39b5d5a8a1",
+		"Description": "Additive(s) given to the herd during the associated period."
+	},
+	"type": "TABLE"
+}

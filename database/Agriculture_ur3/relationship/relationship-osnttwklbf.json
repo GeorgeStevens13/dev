@@ -1,0 +1,28 @@
+{
+	"name": "relationship-osnttwklbf",
+	"properties": {
+		"Name": "relationship-osnttwklbf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalLifeCycleType",
+		"ToTableName": "AnimalLifeCycle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalLifeCycleTypeId",
+				"ToColumnName": "AnimalLifeCycleTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"toEntity\":\"AnimalLifeCycle.cdm.json/AnimalLifeCycle\",\"joinPairs\":[{\"fromAttribute\":\"AnimalLifeCycleTypeId\",\"toAttribute\":\"AnimalLifeCycleTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "a4a9fec5-5dd3-413c-afe0-b9edbba285d2"
+	},
+	"type": "RELATIONSHIP"
+}

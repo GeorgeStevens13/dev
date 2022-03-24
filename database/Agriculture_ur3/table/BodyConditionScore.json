@@ -1,0 +1,136 @@
+{
+	"name": "BodyConditionScore",
+	"properties": {
+		"Name": "BodyConditionScore",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "BodyConditionScoreId",
+					"Description": "The unique identifier of a body condition score.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BodyConditionScore.cdm.json/BodyConditionScore",
+						"Name": "BodyConditionScoreId"
+					}
+				},
+				{
+					"Name": "BodyConditionScoreName",
+					"Description": "The name of a body condition score.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BodyConditionScore.cdm.json/BodyConditionScore",
+						"Name": "BodyConditionScoreName"
+					}
+				},
+				{
+					"Name": "BodyConditionScoreDescription",
+					"Description": "The description of a body condition score.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BodyConditionScore.cdm.json/BodyConditionScore",
+						"Name": "BodyConditionScoreDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "97486a23-4839-4ef9-be4d-a9f1451e91f3",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/BodyConditionScore",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/BodyConditionScore",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BodyConditionScoreId\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreId\"},\"BodyConditionScoreName\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreName\"},\"BodyConditionScoreDescription\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BodyConditionScore\",\"path\":\"BodyConditionScore.cdm.json/BodyConditionScore\"},\"description\":\"Body condition score (BCS) is an easy-to-use tool that describes the relative fatness of beef cattle. \\n\\nA nine-point BCS scale can be used to manage the cow herd.\\n\\nPercentage of empty body fat corresponding to each body condition score on a scale from 1 to 9.\\n\\nBCS    Empty Body Fat (%)\\n1      3.8\\n2      7.5\\n3      11.3\\n4      15.1\\n5      18.8\\n6      22.6\\n7      26.4\\n8      30.2\\n9      33.9\\n\\nThe most important characteristics describing the nine-point scale of body condition scoring system:\\n\\n- emaciated\\n- very thin\\n- thin\\n- borderline\\n- moderate\\n- good\\n- fleshy\\n- obese\\n- very obese\",\"primaryKey\":[\"BodyConditionScoreId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a body condition score.\",\"isNullable\":false,\"name\":\"BodyConditionScoreId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a body condition score.\",\"isNullable\":true,\"name\":\"BodyConditionScoreName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyConditionScore.cdm.json/BodyConditionScore\",\"name\":\"BodyConditionScoreDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a body condition score.\",\"isNullable\":true,\"name\":\"BodyConditionScoreDescription\"}]}}}",
+			"Description": "Body condition score (BCS) is an easy-to-use tool that describes the relative fatness of beef cattle. \n\nA nine-point BCS scale can be used to manage the cow herd.\n\nPercentage of empty body fat corresponding to each body condition score on a scale from 1 to 9.\n\nBCS    Empty Body Fat (%)\n1      3.8\n2      7.5\n3      11.3\n4      15.1\n5      18.8\n6      22.6\n7      26.4\n8      30.2\n9      33.9\n\nThe most important characteristics describing the nine-point scale of body condition scoring system:\n\n- emaciated\n- very thin\n- thin\n- borderline\n- moderate\n- good\n- fleshy\n- obese\n- very obese",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "BodyConditionScoreId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"BodyConditionScoreId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"BodyConditionScoreName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"BodyConditionScoreDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "451ac22f-8ca9-43cf-8255-2577eefc2fe4",
+		"Description": "Body condition score (BCS) is an easy-to-use tool that describes the relative fatness of beef cattle. \n\nA nine-point BCS scale can be used to manage the cow herd.\n\nPercentage of empty body fat corresponding to each body condition score on a scale from 1 to 9.\n\nBCS    Empty Body Fat (%)\n1      3.8\n2      7.5\n3      11.3\n4      15.1\n5      18.8\n6      22.6\n7      26.4\n8      30.2\n9      33.9\n\nThe most important characteristics describing the nine-point scale of body condition scoring system:\n\n- emaciated\n- very thin\n- thin\n- borderline\n- moderate\n- good\n- fleshy\n- obese\n- very obese"
+	},
+	"type": "TABLE"
+}

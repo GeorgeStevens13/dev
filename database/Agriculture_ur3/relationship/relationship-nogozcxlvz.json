@@ -1,0 +1,28 @@
+{
+	"name": "relationship-nogozcxlvz",
+	"properties": {
+		"Name": "relationship-nogozcxlvz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalFeedType",
+		"ToTableName": "AnimalFeedConsumption",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalFeedTypeId",
+				"ToColumnName": "AnimalFeedTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"toEntity\":\"AnimalFeedConsumption.cdm.json/AnimalFeedConsumption\",\"joinPairs\":[{\"fromAttribute\":\"AnimalFeedTypeId\",\"toAttribute\":\"AnimalFeedTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "4d593cd9-36ac-463a-a958-67a5fe9a9f47"
+	},
+	"type": "RELATIONSHIP"
+}

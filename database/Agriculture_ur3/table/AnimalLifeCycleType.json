@@ -1,0 +1,136 @@
+{
+	"name": "AnimalLifeCycleType",
+	"properties": {
+		"Name": "AnimalLifeCycleType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalLifeCycleTypeId",
+					"Description": "The unique identifier of an animal life cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycleType.cdm.json/AnimalLifeCycleType",
+						"Name": "AnimalLifeCycleTypeId"
+					}
+				},
+				{
+					"Name": "AnimalLifeCycleTypeName",
+					"Description": "The name of an animal life cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycleType.cdm.json/AnimalLifeCycleType",
+						"Name": "AnimalLifeCycleTypeName"
+					}
+				},
+				{
+					"Name": "AnimalLifeCycleTypeDescription",
+					"Description": "The description of an animal life cycle type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalLifeCycleType.cdm.json/AnimalLifeCycleType",
+						"Name": "AnimalLifeCycleTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "7df7feac-612b-4e3c-8e4f-902581cd77b1",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalLifeCycleType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalLifeCycleType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalLifeCycleTypeId\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeId\"},\"AnimalLifeCycleTypeName\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeName\"},\"AnimalLifeCycleTypeDescription\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalLifeCycleType\",\"path\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\"},\"description\":\"The life cycle of cattle livestock.\\n\\nEx:\\n- Yearling  \\n- Bull\\n- Steer\\n- Store Cattle\\n- Springer\\n- Calf\\n- Heifer\\n- Heiferette\\n- Cow\\n- Weaner\\n- Long Yearlings\\n- Suckled Calf \\n- Finished cattle\\n\\nwhere:\\n\\nYearling  \\nUncastrated male up to 2 years old\\n\\nBull\\nA bull is a sexually mature male that hasn't been castrated. A young male calve (typically under 20 months of age) and/or is castrated is called a bullock.\\n\\nSteer\\nA steer or Bullock is also a castrated male animal\\n\\nStore Cattle\\nStore cattle are growing animals that are usually up to 2 years old that are bought and then finished. Depending where you are in the world, you may come across the term feeder cattle. This term also refers to animals that require more growth/fattening before slaughter. When they are ready for slaughter they are finished cattle.\\n\\nSpringer\\nYou may also come across the term springer. This can be used to describe a cow or heifer that is close to calving.\\n\\nCalf\\nCalf is used to describe cattle (male or female) that are less than a year old. Between 1 and 2 years of age the animal will be known as a yearling. In some parts of the world this is further broken down into short yearling -when the animal is over a year but under 18 months and long yearling - when the animal is between 19 months and 2 years of age.\\n\\nHeiferette\\nA heiferette is a heifer that has calved once and can't calve again while an open heifer Bulling or Maiden heifer are terms that are sometimes used to refer to an animal that isn't pregnant.\\n\\nHeifer\\nA heifer is a young female animal before she has had a calf or in lactation following the first calving. Occasionally the term, first-calf heifer is used to describe a young female that has had only one calf.\\n\\nCow\\nA cow is an adult female animal that has had one or more calves. A suckler cow is the mother of a calf raised for beef production while the term dam is simply used to describe the mother of a calf.  A mature female used for breeding with eight permanent incisor teeth.\\n\\nWeaner\\nWeaner:  A young animal that has been weaned from its mother's milk to live completely on pasture.  \\n\\nLong Yearlings\\nYearlings that have had an extended period of grazing. Usually placed on feed in the fall following a full summer grazing season. Fed for 120 days or less. \\n\\nSuckled Calf [Cattle]\\nCalf up to 12 months which is, or has, suckled its dam.\\n\\nBullock [Cattle]\\nFeeding/Fattening - Castrated male being fed for slaughter\\n\\nFinished cattle\\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter.\",\"primaryKey\":[\"AnimalLifeCycleTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal life cycle type.\",\"isNullable\":false,\"name\":\"AnimalLifeCycleTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal life cycle type.\",\"isNullable\":true,\"name\":\"AnimalLifeCycleTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalLifeCycleType.cdm.json/AnimalLifeCycleType\",\"name\":\"AnimalLifeCycleTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal life cycle type.\",\"isNullable\":true,\"name\":\"AnimalLifeCycleTypeDescription\"}]}}}",
+			"Description": "The life cycle of cattle livestock.\n\nEx:\n- Yearling  \n- Bull\n- Steer\n- Store Cattle\n- Springer\n- Calf\n- Heifer\n- Heiferette\n- Cow\n- Weaner\n- Long Yearlings\n- Suckled Calf \n- Finished cattle\n\nwhere:\n\nYearling  \nUncastrated male up to 2 years old\n\nBull\nA bull is a sexually mature male that hasn't been castrated. A young male calve (typically under 20 months of age) and/or is castrated is called a bullock.\n\nSteer\nA steer or Bullock is also a castrated male animal\n\nStore Cattle\nStore cattle are growing animals that are usually up to 2 years old that are bought and then finished. Depending where you are in the world, you may come across the term feeder cattle. This term also refers to animals that require more growth/fattening before slaughter. When they are ready for slaughter they are finished cattle.\n\nSpringer\nYou may also come across the term springer. This can be used to describe a cow or heifer that is close to calving.\n\nCalf\nCalf is used to describe cattle (male or female) that are less than a year old. Between 1 and 2 years of age the animal will be known as a yearling. In some parts of the world this is further broken down into short yearling -when the animal is over a year but under 18 months and long yearling - when the animal is between 19 months and 2 years of age.\n\nHeiferette\nA heiferette is a heifer that has calved once and can't calve again while an open heifer Bulling or Maiden heifer are terms that are sometimes used to refer to an animal that isn't pregnant.\n\nHeifer\nA heifer is a young female animal before she has had a calf or in lactation following the first calving. Occasionally the term, first-calf heifer is used to describe a young female that has had only one calf.\n\nCow\nA cow is an adult female animal that has had one or more calves. A suckler cow is the mother of a calf raised for beef production while the term dam is simply used to describe the mother of a calf.  A mature female used for breeding with eight permanent incisor teeth.\n\nWeaner\nWeaner:  A young animal that has been weaned from its mother's milk to live completely on pasture.  \n\nLong Yearlings\nYearlings that have had an extended period of grazing. Usually placed on feed in the fall following a full summer grazing season. Fed for 120 days or less. \n\nSuckled Calf [Cattle]\nCalf up to 12 months which is, or has, suckled its dam.\n\nBullock [Cattle]\nFeeding/Fattening - Castrated male being fed for slaughter\n\nFinished cattle\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalLifeCycleTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalLifeCycleTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalLifeCycleTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalLifeCycleTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "12aa40dd-31d9-4007-9a1c-53987f449814",
+		"Description": "The life cycle of cattle livestock.\n\nEx:\n- Yearling  \n- Bull\n- Steer\n- Store Cattle\n- Springer\n- Calf\n- Heifer\n- Heiferette\n- Cow\n- Weaner\n- Long Yearlings\n- Suckled Calf \n- Finished cattle\n\nwhere:\n\nYearling  \nUncastrated male up to 2 years old\n\nBull\nA bull is a sexually mature male that hasn't been castrated. A young male calve (typically under 20 months of age) and/or is castrated is called a bullock.\n\nSteer\nA steer or Bullock is also a castrated male animal\n\nStore Cattle\nStore cattle are growing animals that are usually up to 2 years old that are bought and then finished. Depending where you are in the world, you may come across the term feeder cattle. This term also refers to animals that require more growth/fattening before slaughter. When they are ready for slaughter they are finished cattle.\n\nSpringer\nYou may also come across the term springer. This can be used to describe a cow or heifer that is close to calving.\n\nCalf\nCalf is used to describe cattle (male or female) that are less than a year old. Between 1 and 2 years of age the animal will be known as a yearling. In some parts of the world this is further broken down into short yearling -when the animal is over a year but under 18 months and long yearling - when the animal is between 19 months and 2 years of age.\n\nHeiferette\nA heiferette is a heifer that has calved once and can't calve again while an open heifer Bulling or Maiden heifer are terms that are sometimes used to refer to an animal that isn't pregnant.\n\nHeifer\nA heifer is a young female animal before she has had a calf or in lactation following the first calving. Occasionally the term, first-calf heifer is used to describe a young female that has had only one calf.\n\nCow\nA cow is an adult female animal that has had one or more calves. A suckler cow is the mother of a calf raised for beef production while the term dam is simply used to describe the mother of a calf.  A mature female used for breeding with eight permanent incisor teeth.\n\nWeaner\nWeaner:  A young animal that has been weaned from its mother's milk to live completely on pasture.  \n\nLong Yearlings\nYearlings that have had an extended period of grazing. Usually placed on feed in the fall following a full summer grazing season. Fed for 120 days or less. \n\nSuckled Calf [Cattle]\nCalf up to 12 months which is, or has, suckled its dam.\n\nBullock [Cattle]\nFeeding/Fattening - Castrated male being fed for slaughter\n\nFinished cattle\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter."
+	},
+	"type": "TABLE"
+}

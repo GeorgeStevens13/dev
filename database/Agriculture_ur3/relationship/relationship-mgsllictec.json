@@ -1,0 +1,28 @@
+{
+	"name": "relationship-mgsllictec",
+	"properties": {
+		"Name": "relationship-mgsllictec",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalEventAssetRelationshipType",
+		"ToTableName": "AnimalEventRelatedAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalEventAssetRelationshipTypeId",
+				"ToColumnName": "AnimalEventAssetRelationshipTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalEventAssetRelationshipType.cdm.json/AnimalEventAssetRelationshipType\",\"toEntity\":\"AnimalEventRelatedAsset.cdm.json/AnimalEventRelatedAsset\",\"joinPairs\":[{\"fromAttribute\":\"AnimalEventAssetRelationshipTypeId\",\"toAttribute\":\"AnimalEventAssetRelationshipTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "750cf8e1-3692-48af-afd4-07b53b5db080"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,136 @@
+{
+	"name": "AnimalFeedCategory",
+	"properties": {
+		"Name": "AnimalFeedCategory",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalFeedCategoryId",
+					"Description": "The unique identifier of an animal feed category.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedCategory.cdm.json/AnimalFeedCategory",
+						"Name": "AnimalFeedCategoryId"
+					}
+				},
+				{
+					"Name": "AnimalFeedCategoryName",
+					"Description": "The name of an animal feed category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedCategory.cdm.json/AnimalFeedCategory",
+						"Name": "AnimalFeedCategoryName"
+					}
+				},
+				{
+					"Name": "AnimalFeedCategoryDescription",
+					"Description": "The description of an animal feed category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedCategory.cdm.json/AnimalFeedCategory",
+						"Name": "AnimalFeedCategoryDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "61809045-7c2d-455f-9221-7c1bc95dfb10",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedCategory",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedCategory",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalFeedCategoryId\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryId\"},\"AnimalFeedCategoryName\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryName\"},\"AnimalFeedCategoryDescription\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalFeedCategory\",\"path\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\"},\"description\":\"We can conveniently classify feeds into three main types: \\n\\n(1) roughages\\n(2) concentrates\\n(3) mixed feeds. \\n\\nRoughages include pasture forages, hays, silages, and byproduct feeds that contain a high percentage of fiber.\",\"primaryKey\":[\"AnimalFeedCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal feed category.\",\"isNullable\":false,\"name\":\"AnimalFeedCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal feed category.\",\"isNullable\":true,\"name\":\"AnimalFeedCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedCategory.cdm.json/AnimalFeedCategory\",\"name\":\"AnimalFeedCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal feed category.\",\"isNullable\":true,\"name\":\"AnimalFeedCategoryDescription\"}]}}}",
+			"Description": "We can conveniently classify feeds into three main types: \n\n(1) roughages\n(2) concentrates\n(3) mixed feeds. \n\nRoughages include pasture forages, hays, silages, and byproduct feeds that contain a high percentage of fiber.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalFeedCategoryId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalFeedCategoryId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalFeedCategoryName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFeedCategoryDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "c55b72c3-b0fb-4c8a-8f9c-d06c72a17aa7",
+		"Description": "We can conveniently classify feeds into three main types: \n\n(1) roughages\n(2) concentrates\n(3) mixed feeds. \n\nRoughages include pasture forages, hays, silages, and byproduct feeds that contain a high percentage of fiber."
+	},
+	"type": "TABLE"
+}

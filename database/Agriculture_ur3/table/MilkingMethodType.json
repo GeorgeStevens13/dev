@@ -1,0 +1,136 @@
+{
+	"name": "MilkingMethodType",
+	"properties": {
+		"Name": "MilkingMethodType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "MilkingMethodTypeId",
+					"Description": "The unique identifier of a milking method type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkingMethodType.cdm.json/MilkingMethodType",
+						"Name": "MilkingMethodTypeId"
+					}
+				},
+				{
+					"Name": "MilkingMethodTypeName",
+					"Description": "The name of a milking method type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkingMethodType.cdm.json/MilkingMethodType",
+						"Name": "MilkingMethodTypeName"
+					}
+				},
+				{
+					"Name": "MilkingMethodTypeDescription",
+					"Description": "The description of a milking method type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MilkingMethodType.cdm.json/MilkingMethodType",
+						"Name": "MilkingMethodTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "9f47fbf3-142b-44a3-a171-80292d7831a9",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MilkingMethodType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MilkingMethodType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MilkingMethodTypeId\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeId\"},\"MilkingMethodTypeName\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeName\"},\"MilkingMethodTypeDescription\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MilkingMethodType\",\"path\":\"MilkingMethodType.cdm.json/MilkingMethodType\"},\"description\":\"The method by which the cow is milked.\\n\\nEx:\\n- Automatic\\n- Robotic  \\n- Hand\",\"primaryKey\":[\"MilkingMethodTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a milking method type.\",\"isNullable\":false,\"name\":\"MilkingMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a milking method type.\",\"isNullable\":true,\"name\":\"MilkingMethodTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MilkingMethodType.cdm.json/MilkingMethodType\",\"name\":\"MilkingMethodTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a milking method type.\",\"isNullable\":true,\"name\":\"MilkingMethodTypeDescription\"}]}}}",
+			"Description": "The method by which the cow is milked.\n\nEx:\n- Automatic\n- Robotic  \n- Hand",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MilkingMethodTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"MilkingMethodTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MilkingMethodTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MilkingMethodTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "f54b7a82-a21d-4aa5-b06a-153aaf2d0e75",
+		"Description": "The method by which the cow is milked.\n\nEx:\n- Automatic\n- Robotic  \n- Hand"
+	},
+	"type": "TABLE"
+}

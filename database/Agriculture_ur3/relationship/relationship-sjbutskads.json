@@ -1,0 +1,28 @@
+{
+	"name": "relationship-sjbutskads",
+	"properties": {
+		"Name": "relationship-sjbutskads",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalStatusType",
+		"ToTableName": "AnimalStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalStatusTypeId",
+				"ToColumnName": "AnimalStatusTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalStatusType.cdm.json/AnimalStatusType\",\"toEntity\":\"AnimalStatus.cdm.json/AnimalStatus\",\"joinPairs\":[{\"fromAttribute\":\"AnimalStatusTypeId\",\"toAttribute\":\"AnimalStatusTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "60c5a5a0-1c09-4192-95c8-c6759921c619"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "relationship-fioqthaphr",
+	"properties": {
+		"Name": "relationship-fioqthaphr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Animal",
+		"ToTableName": "RelatedAnimal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "RelatedAnimalId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Animal.cdm.json/Animal\",\"toEntity\":\"RelatedAnimal.cdm.json/RelatedAnimal\",\"joinPairs\":[{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"RelatedAnimalId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "1ccba165-e3bc-41d2-931f-9d538c8f35d2"
+	},
+	"type": "RELATIONSHIP"
+}

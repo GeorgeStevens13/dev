@@ -1,0 +1,28 @@
+{
+	"name": "relationship-detsiyeakw",
+	"properties": {
+		"Name": "relationship-detsiyeakw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalEventCategory",
+		"ToTableName": "AnimalEventType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalEventCategoryId",
+				"ToColumnName": "AnimalEventCategoryId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalEventCategory.cdm.json/AnimalEventCategory\",\"toEntity\":\"AnimalEventType.cdm.json/AnimalEventType\",\"joinPairs\":[{\"fromAttribute\":\"AnimalEventCategoryId\",\"toAttribute\":\"AnimalEventCategoryId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "94017fe0-cfb9-4d8c-aedc-5b12b93f5fa1"
+	},
+	"type": "RELATIONSHIP"
+}

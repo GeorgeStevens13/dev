@@ -1,0 +1,28 @@
+{
+	"name": "relationship-rxjrcdldhm",
+	"properties": {
+		"Name": "relationship-rxjrcdldhm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MuscleScore",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MuscleScoreId",
+				"ToColumnName": "MuscleScoreId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MuscleScore.cdm.json/MuscleScore\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"MuscleScoreId\",\"toAttribute\":\"MuscleScoreId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "575559c1-f28b-4223-9eb2-2111cb659063"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "relationship-icrtppjmel",
+	"properties": {
+		"Name": "relationship-icrtppjmel",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalCharacteristicType",
+		"ToTableName": "AnimalCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalCharacteristicTypeId",
+				"ToColumnName": "AnimalCharacteristicTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"toEntity\":\"AnimalCharacteristic.cdm.json/AnimalCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"AnimalCharacteristicTypeId\",\"toAttribute\":\"AnimalCharacteristicTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "bcc4587c-4ffa-469f-8cd8-aacf4ce383e9"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,233 @@
+{
+	"name": "AnimalFeedAdditive",
+	"properties": {
+		"Name": "AnimalFeedAdditive",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalId",
+					"Description": "The unique identifier of an animal.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "AnimalId"
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "ItemSku"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "FeedAdditiveTypeId",
+					"Description": "The unique identifier of a feed additive type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "FeedAdditiveTypeId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "AnimalFeedAdditiveConsumptionUnits",
+					"Description": "The consumption units consumed of the associated feed additive type by the animal during the period.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "AnimalFeedAdditiveConsumptionUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "UnitOfMeasureId"
+					}
+				},
+				{
+					"Name": "AnimalFeedAdditiveNote",
+					"Description": "A note, comment or additional information regarding the animal feed additive consumption.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedAdditive.cdm.json/AnimalFeedAdditive",
+						"Name": "AnimalFeedAdditiveNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "19bbf01e-f2e0-4720-ba8b-17fa05ce9072",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedAdditive",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedAdditive",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalId\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalId\"},\"ItemSku\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"ItemSku\"},\"PeriodStartTimestamp\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"PeriodStartTimestamp\"},\"FeedAdditiveTypeId\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"FeedAdditiveTypeId\"},\"PeriodEndTimestamp\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"PeriodEndTimestamp\"},\"AnimalFeedAdditiveConsumptionUnits\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalFeedAdditiveConsumptionUnits\"},\"UnitOfMeasureId\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"UnitOfMeasureId\"},\"AnimalFeedAdditiveNote\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalFeedAdditiveNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalFeedAdditive\",\"path\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\"},\"description\":\"The amount of feed additive consumed by an animal during the associated period.\",\"primaryKey\":[\"AnimalId\",\"ItemSku\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal.\",\"isNullable\":false,\"name\":\"AnimalId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"FeedAdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feed additive type.\",\"isNullable\":false,\"name\":\"FeedAdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalFeedAdditiveConsumptionUnits\"},\"dataType\":\"integer\",\"description\":\"The consumption units consumed of the associated feed additive type by the animal during the period.\",\"isNullable\":true,\"name\":\"AnimalFeedAdditiveConsumptionUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedAdditive.cdm.json/AnimalFeedAdditive\",\"name\":\"AnimalFeedAdditiveNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the animal feed additive consumption.\",\"isNullable\":true,\"name\":\"AnimalFeedAdditiveNote\"}]}}}",
+			"Description": "The amount of feed additive consumed by an animal during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalId,ItemSku,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ItemSku\",\"type\":\"string\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FeedAdditiveTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFeedAdditiveConsumptionUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFeedAdditiveNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "aa6d9921-0966-4aa4-a621-9946382bfe3a",
+		"Description": "The amount of feed additive consumed by an animal during the associated period."
+	},
+	"type": "TABLE"
+}

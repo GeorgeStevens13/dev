@@ -1,0 +1,136 @@
+{
+	"name": "FeedAdditiveCategory",
+	"properties": {
+		"Name": "FeedAdditiveCategory",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "FeedAdditiveCategoryId",
+					"Description": "The unique identifier of a feed additive category.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveCategory.cdm.json/FeedAdditiveCategory",
+						"Name": "FeedAdditiveCategoryId"
+					}
+				},
+				{
+					"Name": "FeedAdditiveCategoryName",
+					"Description": "The name a feed additive category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveCategory.cdm.json/FeedAdditiveCategory",
+						"Name": "FeedAdditiveCategoryName"
+					}
+				},
+				{
+					"Name": "FeedAdditiveCategoryDescription",
+					"Description": "The description of a feed additive category.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "FeedAdditiveCategory.cdm.json/FeedAdditiveCategory",
+						"Name": "FeedAdditiveCategoryDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "34b2406b-0766-4311-8ac4-1667280e00b4",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/FeedAdditiveCategory",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/FeedAdditiveCategory",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FeedAdditiveCategoryId\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryId\"},\"FeedAdditiveCategoryName\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryName\"},\"FeedAdditiveCategoryDescription\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FeedAdditiveCategory\",\"path\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\"},\"description\":\"There are eight categories of feed additives that livestock farmers typically employ.\\n\\nEx:\\n- Antibiotics\\n- Acidifiers\\n- Antioxidants\\n- Vitamins\\n- Minerals\\n- Amino Acids\\n- Binders\\n- Enzymes\",\"primaryKey\":[\"FeedAdditiveCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feed additive category.\",\"isNullable\":false,\"name\":\"FeedAdditiveCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name a feed additive category.\",\"isNullable\":true,\"name\":\"FeedAdditiveCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"name\":\"FeedAdditiveCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a feed additive category.\",\"isNullable\":true,\"name\":\"FeedAdditiveCategoryDescription\"}]}}}",
+			"Description": "There are eight categories of feed additives that livestock farmers typically employ.\n\nEx:\n- Antibiotics\n- Acidifiers\n- Antioxidants\n- Vitamins\n- Minerals\n- Amino Acids\n- Binders\n- Enzymes",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FeedAdditiveCategoryId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"FeedAdditiveCategoryId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FeedAdditiveCategoryName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FeedAdditiveCategoryDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "e2d2c7ed-5961-43ac-804c-ae4d9c0e992c",
+		"Description": "There are eight categories of feed additives that livestock farmers typically employ.\n\nEx:\n- Antibiotics\n- Acidifiers\n- Antioxidants\n- Vitamins\n- Minerals\n- Amino Acids\n- Binders\n- Enzymes"
+	},
+	"type": "TABLE"
+}

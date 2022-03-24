@@ -1,0 +1,136 @@
+{
+	"name": "HerdType",
+	"properties": {
+		"Name": "HerdType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "HerdTypeId",
+					"Description": "The unique identifier of a herd type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdType.cdm.json/HerdType",
+						"Name": "HerdTypeId"
+					}
+				},
+				{
+					"Name": "HerdTypeName",
+					"Description": "The name of a herd type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdType.cdm.json/HerdType",
+						"Name": "HerdTypeName"
+					}
+				},
+				{
+					"Name": "HerdTypeDescription",
+					"Description": "The description of a herd type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "HerdType.cdm.json/HerdType",
+						"Name": "HerdTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "34650dfa-ff17-4d17-afbe-453b33ed73cd",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/HerdType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HerdTypeId\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeId\"},\"HerdTypeName\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeName\"},\"HerdTypeDescription\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HerdType\",\"path\":\"HerdType.cdm.json/HerdType\"},\"description\":\"The type of herd.\\n\\nEx:\\n\\nClosed Herd \\nOne where replacements are bred within the herd and not brought in from outside.\\n\\nFlying Herd \\nA herd where replacement stock is frequently bought in from outside.\",\"primaryKey\":[\"HerdTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a herd type.\",\"isNullable\":false,\"name\":\"HerdTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a herd type.\",\"isNullable\":true,\"name\":\"HerdTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HerdType.cdm.json/HerdType\",\"name\":\"HerdTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a herd type.\",\"isNullable\":true,\"name\":\"HerdTypeDescription\"}]}}}",
+			"Description": "The type of herd.\n\nEx:\n\nClosed Herd \nOne where replacements are bred within the herd and not brought in from outside.\n\nFlying Herd \nA herd where replacement stock is frequently bought in from outside.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "HerdTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"HerdTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"HerdTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"HerdTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "5d0c2034-5501-4922-9e85-fbb9938c5e6b",
+		"Description": "The type of herd.\n\nEx:\n\nClosed Herd \nOne where replacements are bred within the herd and not brought in from outside.\n\nFlying Herd \nA herd where replacement stock is frequently bought in from outside."
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,136 @@
+{
+	"name": "AnimalEventPartyRelationshipType",
+	"properties": {
+		"Name": "AnimalEventPartyRelationshipType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of an animal event party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType",
+						"Name": "AnimalEventPartyRelationshipTypeId"
+					}
+				},
+				{
+					"Name": "AnimalEventPartyRelationshipTypeName",
+					"Description": "The name of an animal event party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType",
+						"Name": "AnimalEventPartyRelationshipTypeName"
+					}
+				},
+				{
+					"Name": "AnimalEventPartyRelationshipTypeDescription",
+					"Description": "The description of an animal event party relationship type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType",
+						"Name": "AnimalEventPartyRelationshipTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "090b8a9d-439b-4baa-a5c5-44c1e7c37f8b",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventPartyRelationshipType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalEventPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalEventPartyRelationshipTypeId\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeId\"},\"AnimalEventPartyRelationshipTypeName\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeName\"},\"AnimalEventPartyRelationshipTypeDescription\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalEventPartyRelationshipType\",\"path\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\"},\"description\":\"The nature of the animal event - party relationship type.\\n\\nEx:\\n- Performed-by party\\n- Invoice-to party\\n- Paid-by party\\n- Authorized-by party\\n- Report-to party\",\"primaryKey\":[\"AnimalEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal event party relationship type.\",\"isNullable\":false,\"name\":\"AnimalEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal event party relationship type.\",\"isNullable\":true,\"name\":\"AnimalEventPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalEventPartyRelationshipType.cdm.json/AnimalEventPartyRelationshipType\",\"name\":\"AnimalEventPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal event party relationship type.\",\"isNullable\":true,\"name\":\"AnimalEventPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the animal event - party relationship type.\n\nEx:\n- Performed-by party\n- Invoice-to party\n- Paid-by party\n- Authorized-by party\n- Report-to party",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalEventPartyRelationshipTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalEventPartyRelationshipTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalEventPartyRelationshipTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "afd05fdd-649c-4d16-beba-0e3a3bd83e03",
+		"Description": "The nature of the animal event - party relationship type.\n\nEx:\n- Performed-by party\n- Invoice-to party\n- Paid-by party\n- Authorized-by party\n- Report-to party"
+	},
+	"type": "TABLE"
+}

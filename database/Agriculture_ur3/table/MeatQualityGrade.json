@@ -1,0 +1,136 @@
+{
+	"name": "MeatQualityGrade",
+	"properties": {
+		"Name": "MeatQualityGrade",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "MeatQualityGradeId",
+					"Description": "The unique identifier of a meat quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MeatQualityGrade.cdm.json/MeatQualityGrade",
+						"Name": "MeatQualityGradeId"
+					}
+				},
+				{
+					"Name": "MeatQualityGradeName",
+					"Description": "The name of a meat quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MeatQualityGrade.cdm.json/MeatQualityGrade",
+						"Name": "MeatQualityGradeName"
+					}
+				},
+				{
+					"Name": "MeatQualityGradeDescription",
+					"Description": "The description of a meat quality grade.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "MeatQualityGrade.cdm.json/MeatQualityGrade",
+						"Name": "MeatQualityGradeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "e2f5166b-12bb-4132-80a1-31ba5dd83f29",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MeatQualityGrade",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/MeatQualityGrade",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeatQualityGradeId\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeId\"},\"MeatQualityGradeName\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeName\"},\"MeatQualityGradeDescription\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeatQualityGrade\",\"path\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\"},\"description\":\"QuA meat quality grade placed on each carcass by the U.S. Department of Agriculture inspector at the packing plant. \\n\\nQuality grade is based on the degree of marbling and degree of maturity. Color, texture and firmness of lean also are used in the final quality grade determination.\\n\\nEx:\\n- Prime\\n- Choice\\n- Select\\n- Standard\\n- Commercial\\n- Cutter\\n-  Canner\",\"primaryKey\":[\"MeatQualityGradeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meat quality grade.\",\"isNullable\":false,\"name\":\"MeatQualityGradeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a meat quality grade.\",\"isNullable\":true,\"name\":\"MeatQualityGradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeatQualityGrade.cdm.json/MeatQualityGrade\",\"name\":\"MeatQualityGradeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a meat quality grade.\",\"isNullable\":true,\"name\":\"MeatQualityGradeDescription\"}]}}}",
+			"Description": "QuA meat quality grade placed on each carcass by the U.S. Department of Agriculture inspector at the packing plant. \n\nQuality grade is based on the degree of marbling and degree of maturity. Color, texture and firmness of lean also are used in the final quality grade determination.\n\nEx:\n- Prime\n- Choice\n- Select\n- Standard\n- Commercial\n- Cutter\n-  Canner",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MeatQualityGradeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"MeatQualityGradeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MeatQualityGradeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MeatQualityGradeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "206df3d4-d338-4099-8f80-35c7704d0c15",
+		"Description": "QuA meat quality grade placed on each carcass by the U.S. Department of Agriculture inspector at the packing plant. \n\nQuality grade is based on the degree of marbling and degree of maturity. Color, texture and firmness of lean also are used in the final quality grade determination.\n\nEx:\n- Prime\n- Choice\n- Select\n- Standard\n- Commercial\n- Cutter\n-  Canner"
+	},
+	"type": "TABLE"
+}

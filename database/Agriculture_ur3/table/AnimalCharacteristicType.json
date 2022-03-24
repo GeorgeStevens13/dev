@@ -1,0 +1,136 @@
+{
+	"name": "AnimalCharacteristicType",
+	"properties": {
+		"Name": "AnimalCharacteristicType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalCharacteristicTypeId",
+					"Description": "The unique identifier of an animal characteristic type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalCharacteristicType.cdm.json/AnimalCharacteristicType",
+						"Name": "AnimalCharacteristicTypeId"
+					}
+				},
+				{
+					"Name": "AnimalCharacteristicTypeName",
+					"Description": "The name of an animal characteristic type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalCharacteristicType.cdm.json/AnimalCharacteristicType",
+						"Name": "AnimalCharacteristicTypeName"
+					}
+				},
+				{
+					"Name": "AnimalCharacteristicTypeDescription",
+					"Description": "The description of an animal characteristic type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalCharacteristicType.cdm.json/AnimalCharacteristicType",
+						"Name": "AnimalCharacteristicTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "e93a74a7-5354-43d1-a591-26385a4db72e",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalCharacteristicType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalCharacteristicType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalCharacteristicTypeId\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeId\"},\"AnimalCharacteristicTypeName\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeName\"},\"AnimalCharacteristicTypeDescription\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalCharacteristicType\",\"path\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\"},\"description\":\"Characteristics that may be associated with an cattle livestock animal.\\n\\nEx:\\n- Soggy Cattle\\n- Stocker\\n- Drunk Cattle\\n- Eared Cattle\\n- Fed cattle\\n- Feeder cattle\\n- Finished cattle\\n- Grass Cattle\\n- Green Cattle\\n- Overeater\\n- Warmed-up Cattle\\n- Polled\\n- Carry Cattle\\n- Customer Cattle\\n- In Calf\\n\\nwhere:\\n\\nSoggy Cattle\\n Cattle from a backgrounding or growing operation that are fleshy or overly conditioned.\\n\\nStocker\\nWeaned cattle that are fed high roughage diets (including grazing) before going into feedlots.\\n\\nDrunk Cattle\\nCattle that are experiencing acidosis due to overconsumption or too rapid consumption of high-grain diets.\\n\\nEared Cattle\\nCattle with significant Bos indicus (Brahman) breeding.\\n\\nFed cattle\\nSteers and heifers that have been fed concentrates, usually for 90 to 120 days in a feedlot.\\n\\nFeeder cattle\\nCattle that have been fed on forage but need further feeding on a high-energy rations before slaughter.\\n\\nFinished cattle\\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter.\\n\\nGrass Cattle\\nCattle that were grown on pasture prior to placement in the feedlot.\\n\\nGreen Cattle\\nCattle that are relatively thin, with only small amounts of body condition\\n\\nOvereater\\nCattle that eat too much on a high-grain diet.\\n\\nWarmed-up Cattle\\nCattle that have been grown in a backgrounding yard prior to being placed on feed.\\n\\nPolled\\nHaving no horns\\n\\nCarry Cattle\\nCattle that are held at the packing plant during a holiday or weekend. These cattle may be penned at the plant for 36 to 84 hours before being slaughtered. These cattle generally are offered feed and water if held for more than 36 hours.\\n\\nCustomer Cattle\\nCattle that are owned by an investor, rancher or other client of the feedlot and fed and managed for a fee. Also see Company Cattle.\\n\\nIn Calf\\nPregnant cow\",\"primaryKey\":[\"AnimalCharacteristicTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal characteristic type.\",\"isNullable\":false,\"name\":\"AnimalCharacteristicTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal characteristic type.\",\"isNullable\":true,\"name\":\"AnimalCharacteristicTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalCharacteristicType.cdm.json/AnimalCharacteristicType\",\"name\":\"AnimalCharacteristicTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal characteristic type.\",\"isNullable\":true,\"name\":\"AnimalCharacteristicTypeDescription\"}]}}}",
+			"Description": "Characteristics that may be associated with an cattle livestock animal.\n\nEx:\n- Soggy Cattle\n- Stocker\n- Drunk Cattle\n- Eared Cattle\n- Fed cattle\n- Feeder cattle\n- Finished cattle\n- Grass Cattle\n- Green Cattle\n- Overeater\n- Warmed-up Cattle\n- Polled\n- Carry Cattle\n- Customer Cattle\n- In Calf\n\nwhere:\n\nSoggy Cattle\n Cattle from a backgrounding or growing operation that are fleshy or overly conditioned.\n\nStocker\nWeaned cattle that are fed high roughage diets (including grazing) before going into feedlots.\n\nDrunk Cattle\nCattle that are experiencing acidosis due to overconsumption or too rapid consumption of high-grain diets.\n\nEared Cattle\nCattle with significant Bos indicus (Brahman) breeding.\n\nFed cattle\nSteers and heifers that have been fed concentrates, usually for 90 to 120 days in a feedlot.\n\nFeeder cattle\nCattle that have been fed on forage but need further feeding on a high-energy rations before slaughter.\n\nFinished cattle\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter.\n\nGrass Cattle\nCattle that were grown on pasture prior to placement in the feedlot.\n\nGreen Cattle\nCattle that are relatively thin, with only small amounts of body condition\n\nOvereater\nCattle that eat too much on a high-grain diet.\n\nWarmed-up Cattle\nCattle that have been grown in a backgrounding yard prior to being placed on feed.\n\nPolled\nHaving no horns\n\nCarry Cattle\nCattle that are held at the packing plant during a holiday or weekend. These cattle may be penned at the plant for 36 to 84 hours before being slaughtered. These cattle generally are offered feed and water if held for more than 36 hours.\n\nCustomer Cattle\nCattle that are owned by an investor, rancher or other client of the feedlot and fed and managed for a fee. Also see Company Cattle.\n\nIn Calf\nPregnant cow",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalCharacteristicTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalCharacteristicTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalCharacteristicTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalCharacteristicTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "785a0beb-c774-46e9-8572-b319fd8803b5",
+		"Description": "Characteristics that may be associated with an cattle livestock animal.\n\nEx:\n- Soggy Cattle\n- Stocker\n- Drunk Cattle\n- Eared Cattle\n- Fed cattle\n- Feeder cattle\n- Finished cattle\n- Grass Cattle\n- Green Cattle\n- Overeater\n- Warmed-up Cattle\n- Polled\n- Carry Cattle\n- Customer Cattle\n- In Calf\n\nwhere:\n\nSoggy Cattle\n Cattle from a backgrounding or growing operation that are fleshy or overly conditioned.\n\nStocker\nWeaned cattle that are fed high roughage diets (including grazing) before going into feedlots.\n\nDrunk Cattle\nCattle that are experiencing acidosis due to overconsumption or too rapid consumption of high-grain diets.\n\nEared Cattle\nCattle with significant Bos indicus (Brahman) breeding.\n\nFed cattle\nSteers and heifers that have been fed concentrates, usually for 90 to 120 days in a feedlot.\n\nFeeder cattle\nCattle that have been fed on forage but need further feeding on a high-energy rations before slaughter.\n\nFinished cattle\nFed cattle whose time in the feed lot has been completed so that they are now ready for slaughter.\n\nGrass Cattle\nCattle that were grown on pasture prior to placement in the feedlot.\n\nGreen Cattle\nCattle that are relatively thin, with only small amounts of body condition\n\nOvereater\nCattle that eat too much on a high-grain diet.\n\nWarmed-up Cattle\nCattle that have been grown in a backgrounding yard prior to being placed on feed.\n\nPolled\nHaving no horns\n\nCarry Cattle\nCattle that are held at the packing plant during a holiday or weekend. These cattle may be penned at the plant for 36 to 84 hours before being slaughtered. These cattle generally are offered feed and water if held for more than 36 hours.\n\nCustomer Cattle\nCattle that are owned by an investor, rancher or other client of the feedlot and fed and managed for a fee. Also see Company Cattle.\n\nIn Calf\nPregnant cow"
+	},
+	"type": "TABLE"
+}

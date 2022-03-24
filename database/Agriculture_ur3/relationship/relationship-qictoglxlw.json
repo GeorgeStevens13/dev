@@ -1,0 +1,28 @@
+{
+	"name": "relationship-qictoglxlw",
+	"properties": {
+		"Name": "relationship-qictoglxlw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FeedAdditiveCategory",
+		"ToTableName": "FeedAdditiveType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FeedAdditiveCategoryId",
+				"ToColumnName": "FeedAdditiveCategoryId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FeedAdditiveCategory.cdm.json/FeedAdditiveCategory\",\"toEntity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"joinPairs\":[{\"fromAttribute\":\"FeedAdditiveCategoryId\",\"toAttribute\":\"FeedAdditiveCategoryId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "57ac9678-35a4-406a-8ebc-a873dcf8ed48"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "relationship-rxpkrivcmr",
+	"properties": {
+		"Name": "relationship-rxpkrivcmr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalExpenseType",
+		"ToTableName": "AnimalExpense",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalExpenseTypeId",
+				"ToColumnName": "AnimalExpenseTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalExpenseType.cdm.json/AnimalExpenseType\",\"toEntity\":\"AnimalExpense.cdm.json/AnimalExpense\",\"joinPairs\":[{\"fromAttribute\":\"AnimalExpenseTypeId\",\"toAttribute\":\"AnimalExpenseTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "8a6523d4-4eea-4b21-8acb-1fcb6a9b6309"
+	},
+	"type": "RELATIONSHIP"
+}

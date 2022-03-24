@@ -1,0 +1,36 @@
+{
+	"name": "relationship-tdzjldwuoq",
+	"properties": {
+		"Name": "relationship-tdzjldwuoq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalEvent",
+		"ToTableName": "AnimalEventRelatedAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalEventTypeId",
+				"ToColumnName": "AnimalEventTypeId"
+			},
+			{
+				"FromColumnName": "AnimalId",
+				"ToColumnName": "AnimalId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalEvent.cdm.json/AnimalEvent\",\"toEntity\":\"AnimalEventRelatedAsset.cdm.json/AnimalEventRelatedAsset\",\"joinPairs\":[{\"fromAttribute\":\"AnimalEventTypeId\",\"toAttribute\":\"AnimalEventTypeId\"},{\"fromAttribute\":\"AnimalId\",\"toAttribute\":\"AnimalId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "b4d1d53b-7df5-48e7-84e4-57ab7f64208b"
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "relationship-secrpxyzdp",
+	"properties": {
+		"Name": "relationship-secrpxyzdp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnimalPositionType",
+		"ToTableName": "AnimalBodyPosition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnimalPositionTypeId",
+				"ToColumnName": "AnimalPositionTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnimalPositionType.cdm.json/AnimalPositionType\",\"toEntity\":\"AnimalBodyPosition.cdm.json/AnimalBodyPosition\",\"joinPairs\":[{\"fromAttribute\":\"AnimalPositionTypeId\",\"toAttribute\":\"AnimalPositionTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "6f899003-c629-40c2-ba69-887edeaf95d5"
+	},
+	"type": "RELATIONSHIP"
+}

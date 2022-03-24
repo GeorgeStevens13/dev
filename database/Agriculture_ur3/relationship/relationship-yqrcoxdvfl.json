@@ -1,0 +1,28 @@
+{
+	"name": "relationship-yqrcoxdvfl",
+	"properties": {
+		"Name": "relationship-yqrcoxdvfl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UsdaYieldGrade",
+		"ToTableName": "Animal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UsdaYieldGradeId",
+				"ToColumnName": "UsdaYieldGradeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UsdaYieldGrade.cdm.json/UsdaYieldGrade\",\"toEntity\":\"Animal.cdm.json/Animal\",\"joinPairs\":[{\"fromAttribute\":\"UsdaYieldGradeId\",\"toAttribute\":\"UsdaYieldGradeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "7f5fb264-3419-41f7-94c3-2380afbb818f"
+	},
+	"type": "RELATIONSHIP"
+}

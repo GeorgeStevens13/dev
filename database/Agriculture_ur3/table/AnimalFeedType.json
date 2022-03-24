@@ -1,0 +1,174 @@
+{
+	"name": "AnimalFeedType",
+	"properties": {
+		"Name": "AnimalFeedType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AnimalFeedTypeId",
+					"Description": "The unique identifier of an animal feed type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedType.cdm.json/AnimalFeedType",
+						"Name": "AnimalFeedTypeId"
+					}
+				},
+				{
+					"Name": "AnimalFeedTypeName",
+					"Description": "The name of an animal feed type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedType.cdm.json/AnimalFeedType",
+						"Name": "AnimalFeedTypeName"
+					}
+				},
+				{
+					"Name": "AnimalFeedTypeDescription",
+					"Description": "The description of an animal feed type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedType.cdm.json/AnimalFeedType",
+						"Name": "AnimalFeedTypeDescription"
+					}
+				},
+				{
+					"Name": "AnimalFeedCategoryId",
+					"Description": "The unique identifier of an animal feed category.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedType.cdm.json/AnimalFeedType",
+						"Name": "AnimalFeedCategoryId"
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AnimalFeedType.cdm.json/AnimalFeedType",
+						"Name": "ItemSku"
+					}
+				}
+			],
+			"ColumnSetEntityName": "3b827a7a-82cd-4d75-a316-10de4f25304e",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Agriculture_ur3/AnimalFeedType",
+				"Properties": {
+					"LinkedServiceName": "gstevens-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AnimalFeedTypeId\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeId\"},\"AnimalFeedTypeName\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeName\"},\"AnimalFeedTypeDescription\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeDescription\"},\"AnimalFeedCategoryId\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedCategoryId\"},\"ItemSku\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"ItemSku\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AnimalFeedType\",\"path\":\"AnimalFeedType.cdm.json/AnimalFeedType\"},\"description\":\"The type of animal feed.\\n\\nEx:\\n- Grass\\n- Corn\\n- High-moisture corn\\n- Barley\\n- Flax\\n- Hay\\n- Wheat\\n- Soybean meal\\n- Sugar beets\\n- Potato peels\\n- Citrus pulp\\n- Wet Distillers Grains Plus Solubles:\\n- Wet Corn Gluten Feed\\n- Haylage\\n- Silage\\n\\nWet Corn Gluten Feed: Byproduct of the wet corn milling industry that is made by blending corn bran and corn steep liquor. A common ingredient in finishing rations in Iowa, eastern Nebraska, southeastern South Dakota and southern Minnesota. Also see Byproducts or Coproducts.\\n\\nWet Distillers Grains Plus Solubles: Byproduct of the dry milling (ethanol) industry. Commonly used as an ingredient in feedlots in proximity to dry milling plants. Can be produced from a variety of grains (corn, milo, barley, wheat). Typically contains 65 to 70 percent water. Also see Byproducts or Coproducts.\\n\\nHaylage [Arable]\\nA form of silage with a high dry matter content.\\n\\nGrass and other green crops preserved in a moist state generally with molasses or other additives, either in a clamp, or in a silo tower. Mainly used as cattle feed.\",\"primaryKey\":[\"AnimalFeedTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal feed type.\",\"isNullable\":false,\"name\":\"AnimalFeedTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an animal feed type.\",\"isNullable\":true,\"name\":\"AnimalFeedTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an animal feed type.\",\"isNullable\":true,\"name\":\"AnimalFeedTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"AnimalFeedCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an animal feed category.\",\"isNullable\":true,\"name\":\"AnimalFeedCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AnimalFeedType.cdm.json/AnimalFeedType\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":true,\"name\":\"ItemSku\"}]}}}",
+			"Description": "The type of animal feed.\n\nEx:\n- Grass\n- Corn\n- High-moisture corn\n- Barley\n- Flax\n- Hay\n- Wheat\n- Soybean meal\n- Sugar beets\n- Potato peels\n- Citrus pulp\n- Wet Distillers Grains Plus Solubles:\n- Wet Corn Gluten Feed\n- Haylage\n- Silage\n\nWet Corn Gluten Feed: Byproduct of the wet corn milling industry that is made by blending corn bran and corn steep liquor. A common ingredient in finishing rations in Iowa, eastern Nebraska, southeastern South Dakota and southern Minnesota. Also see Byproducts or Coproducts.\n\nWet Distillers Grains Plus Solubles: Byproduct of the dry milling (ethanol) industry. Commonly used as an ingredient in feedlots in proximity to dry milling plants. Can be produced from a variety of grains (corn, milo, barley, wheat). Typically contains 65 to 70 percent water. Also see Byproducts or Coproducts.\n\nHaylage [Arable]\nA form of silage with a high dry matter content.\n\nGrass and other green crops preserved in a moist state generally with molasses or other additives, either in a clamp, or in a silo tower. Mainly used as cattle feed.",
+			"DisplayFolderInfo": "{\"name\":\"Animal\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "AnimalFeedTypeId",
+			"spark.sql.sources.provider": "csv",
+			"x-ms-usageinfo": "AzureSynapseDatabaseTemplate",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AnimalFeedTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AnimalFeedTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFeedTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AnimalFeedCategoryId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ItemSku\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "0c2f421b-df81-4581-91ae-6ce9a26bd2a7",
+		"Description": "The type of animal feed.\n\nEx:\n- Grass\n- Corn\n- High-moisture corn\n- Barley\n- Flax\n- Hay\n- Wheat\n- Soybean meal\n- Sugar beets\n- Potato peels\n- Citrus pulp\n- Wet Distillers Grains Plus Solubles:\n- Wet Corn Gluten Feed\n- Haylage\n- Silage\n\nWet Corn Gluten Feed: Byproduct of the wet corn milling industry that is made by blending corn bran and corn steep liquor. A common ingredient in finishing rations in Iowa, eastern Nebraska, southeastern South Dakota and southern Minnesota. Also see Byproducts or Coproducts.\n\nWet Distillers Grains Plus Solubles: Byproduct of the dry milling (ethanol) industry. Commonly used as an ingredient in feedlots in proximity to dry milling plants. Can be produced from a variety of grains (corn, milo, barley, wheat). Typically contains 65 to 70 percent water. Also see Byproducts or Coproducts.\n\nHaylage [Arable]\nA form of silage with a high dry matter content.\n\nGrass and other green crops preserved in a moist state generally with molasses or other additives, either in a clamp, or in a silo tower. Mainly used as cattle feed."
+	},
+	"type": "TABLE"
+}

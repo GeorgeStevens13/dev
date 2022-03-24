@@ -1,0 +1,28 @@
+{
+	"name": "relationship-llvyryynfh",
+	"properties": {
+		"Name": "relationship-llvyryynfh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Agriculture_ur3"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FeedAdditiveType",
+		"ToTableName": "HerdFeedAdditive",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FeedAdditiveTypeId",
+				"ToColumnName": "FeedAdditiveTypeId"
+			}
+		],
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FeedAdditiveType.cdm.json/FeedAdditiveType\",\"toEntity\":\"HerdFeedAdditive.cdm.json/HerdFeedAdditive\",\"joinPairs\":[{\"fromAttribute\":\"FeedAdditiveTypeId\",\"toAttribute\":\"FeedAdditiveTypeId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "3fc98e37-a5fe-4a3c-b5d2-1db412324c38"
+	},
+	"type": "RELATIONSHIP"
+}
