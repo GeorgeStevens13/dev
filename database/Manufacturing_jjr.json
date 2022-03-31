@@ -1,0 +1,24 @@
+{
+	"name": "Manufacturing_jjr",
+	"properties": {
+		"Name": "Manufacturing_jjr",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Manufacturing\",\"Version\":\"0.1.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://gssynapsefilesystem@gssynapsesadls.dfs.core.windows.net/Manufacturing_jjr",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "gstevens-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
